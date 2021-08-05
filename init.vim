@@ -46,7 +46,7 @@ set autoindent
 set ic
 set mouse=a
 set title
-colorscheme molokai
+colorscheme gruvbox
 set hlsearch
 set incsearch
 set guifont=Ubuntu\ Mono:h12
