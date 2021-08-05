@@ -11,3 +11,5 @@ if [ ! -f /home/$USER/.local/share/nvim ]
 then
     mkdir /home/$USER/.local/share/nvim
 fi
+ln -s init.vim /home/$USER/.local/share/nvim/init.vim
+ln -s init.vim /home/$USER/.vimrc
