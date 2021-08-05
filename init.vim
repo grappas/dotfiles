@@ -37,6 +37,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ap/vim-buftabline'
 Plug 'elzr/vim-json'
 Plug 'vim-scripts/zoom.vim'
+Plug 'chiedojohn/vim-dr-replace'
 call plug#end()
 
 language pl.UTF-8

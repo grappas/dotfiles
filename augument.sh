@@ -1,15 +1,15 @@
 #!/bin/sh
-if [ ! -f /home/$USER/.local ]
+if [ ! -f ~/.local ]
 then
-    mkdir /home/$USER/.local
+    mkdir ~/.local
 fi
-if [ ! -f /home/$USER/.local/share ]
+if [ ! -f ~/.local/share ]
 then
-    mkdir /home/$USER/.local/share
+    mkdir ~/.local/share
 fi
-if [ ! -f /home/$USER/.local/share/nvim ]
+if [ ! -f ~/.local/share/nvim ]
 then
-    mkdir /home/$USER/.local/share/nvim
+    mkdir ~/.local/share/nvim
 fi
-ln -s init.vim /home/$USER/.local/share/nvim/init.vim
-ln -s init.vim /home/$USER/.vimrc
+ln -s init.vim ~/.local/share/nvim/init.vim
+ln -s init.vim ~/.vimrc
