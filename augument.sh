@@ -1,15 +1,17 @@
 #!/bin/sh
-if [ ! -f ~/.local ]
+if [ ! -d ~/.local ]
 then
     mkdir ~/.local
 fi
-if [ ! -f ~/.local/share ]
+if [ ! -d ~/.local/share ]
 then
     mkdir ~/.local/share
 fi
-if [ ! -f ~/.local/share/nvim ]
+if [ ! -d ~/.local/share/nvim ]
 then
     mkdir ~/.local/share/nvim
 fi
+rm ~/.local/share/nvim/init.vim
+rm ~/.vimrc
 ln -s init.vim ~/.local/share/nvim/init.vim
 ln -s init.vim ~/.vimrc
