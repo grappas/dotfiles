@@ -1,2 +1,2 @@
 # Myvimrc
-
+Kiedy byłem małym chłopcem...
