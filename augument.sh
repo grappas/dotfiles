@@ -13,5 +13,5 @@ then
 fi
 rm ~/.local/share/nvim/init.vim
 rm ~/.vimrc
-ln -s init.vim ~/.local/share/nvim/init.vim
-ln -s init.vim ~/.vimrc
+ln -s $PWD/init.vim ~/.local/share/nvim/init.vim
+ln -s $PWD/init.vim ~/.vimrc
