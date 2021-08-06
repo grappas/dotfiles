@@ -12,7 +12,7 @@ then
     mkdir ~/.local/share/nvim
 fi
 
-if [ ! -d ~/.config/nvim]
+if [ ! -d ~/.config/nvim ]
 then
     mkdir ~/.config/nvim
 fi

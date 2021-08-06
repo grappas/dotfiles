@@ -45,6 +45,7 @@ set number
 set autoindent
 set ic
 set mouse=a
+set showmatch
 set title
 colorscheme gruvbox
 set hlsearch
@@ -60,6 +61,7 @@ set nu
 set smartcase
 set undofile
 set modifiable
+set scrolloff=5
 
 " Give more space for displaying messages.
 set nocompatible
@@ -79,7 +81,6 @@ map <C-t> :e <cfile><cr>
 map <S-Tab> :bn<CR>
 map <silent> <C-kPlus> :ZoomIn<Enter>
 map <silent> <C-kMinus> :ZoomOut<Enter>
-let loaded_matchparen = 1
 let mapleader = " "
 
 " CoC
@@ -150,5 +151,7 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 syntax on
-inoremap jfj <Esc>
-vnoremap jfj <Esc>
+inoremap mmmmm <Esc>
+vnoremap mmmmm <Esc>
+nnoremap n nzzzv
+nnoremap N Nzzzv
