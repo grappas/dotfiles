@@ -1,3 +1,4 @@
+
 lua require('plugins')
 call plug#begin()
 Plug 'wbthomason/packer.nvim'
@@ -39,7 +40,6 @@ Plug 'elzr/vim-json'
 Plug 'vim-scripts/zoom.vim'
 call plug#end()
 
-language pl.UTF-8
 let g:rainbow_active = 1
 set number
 set autoindent
@@ -51,7 +51,7 @@ colorscheme gruvbox
 set hlsearch
 set incsearch
 set guifont=Ubuntu\ Mono:h12
-set clipboard=unnamed
+set clipboard=unnamedplus
 set relativenumber
 set tabstop=4 softtabstop=4
 set shiftwidth=4
