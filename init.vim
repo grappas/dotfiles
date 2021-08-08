@@ -151,7 +151,10 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 syntax on
-inoremap mmmmm <Esc>
-vnoremap mmmmm <Esc>
 nnoremap n nzzzv
 nnoremap N Nzzzv
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+au CursorHoldI * stopinsert
+" set 'updatetime' to 15 seconds when in insert mode
+au InsertEnter * let updaterestore=&updatetime | set updatetime=2000
+au InsertLeave * let &updatetime=updaterestore
