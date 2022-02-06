@@ -22,6 +22,8 @@ set undofile
 set modifiable
 set scrolloff=5
 
+filetype plugin on
+
 " Give more space for displaying messages.
 set nocompatible
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -148,12 +150,12 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 call plug#begin()
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'tpope/vim-fugitive'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -180,7 +182,10 @@ use {'neoclide/coc.nvim', branch = 'release'}
 -- Code commenter
 use 'preservim/nerdcommenter'
 
+-- Do poprawiania składni JSONa
 use 'elzr/vim-json'
+
+-- Do zooma (nie tylko GUI)
 use 'vim-scripts/zoom.vim'
 
 -- zamykanie nawiasów
@@ -213,11 +218,23 @@ use {
     run = function() vim.fn['firenvim#install'](0) end
     }
 
+
+-- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+use {
+    'junegunn/fzf',
+    run = function() vim.fn['fzf#install'](0) end
+    }
+use 'junegunn/fzf.vim'
+
 -- Use dependency and run lua function after load
 use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
     }
+
+use 'tpope/vim-fugitive'
+use 'vim-airline/vim-airline'
+use 'vim-airline/vim-airline-themes'
 end)
 EOF
 
