@@ -77,7 +77,7 @@ nnoremap <leader>k :m .-2<CR>==
 
 " Import plugins
 if filereadable(expand("~/.vimrc.plug"))
-		source ~/.vimrc.plug
+    source ~/.vimrc.plug
 endif
 
 " Status bar config
@@ -87,14 +87,14 @@ set statusline+=%#warningmsg#
 let g:ale_fixers = {}
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_linters = {
-	\'javascript': ['eslint'],
-	\'vue': ['eslint', 'stylelint', 'tsserver'],
-\}
+            \'javascript': ['eslint'],
+            \'vue': ['eslint', 'stylelint', 'tsserver'],
+            \}
 
 let g:ale_fixers = {
-	\'javascript': ['prettier', 'eslint'],
-	\'vue': ['eslint', 'stylelint'],
-\}
+            \'javascript': ['prettier', 'eslint'],
+            \'vue': ['eslint', 'stylelint'],
+            \}
 
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
@@ -106,17 +106,17 @@ let g:ale_fix_on_save = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 fun! TrimWhitespace()
-		let l:save = winsaveview()
-		keeppatterns %s/\s\+$//e
-		call winrestview(l:save)
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
 
 command! -bang -nargs=* Rg
-	\ call fzf#vim#grep(
-	\	 'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-	\	 fzf#vim#with_preview(), <bang>0)
+            \ call fzf#vim#grep(
+            \	 'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+            \	 fzf#vim#with_preview(), <bang>0)
 syntax on
 
 nnoremap n nzzzv
@@ -163,61 +163,61 @@ call plug#end()
 lua <<EOF
 
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
-	use 'preservim/NERDTree'
-	use 'machakann/vim-highlightedyank'
-	use 'frazrepo/vim-rainbow'
-	use 'rockerBOO/awesome-neovim'
-	use 'gruvbox-community/gruvbox'
-	use 'liuchengxu/vim-clap'
-	use 'ryanoasis/vim-devicons'
-	use 'hrsh7th/vim-vsnip'
-	use 'hrsh7th/vim-vsnip-integ'
+use 'wbthomason/packer.nvim'
+use 'preservim/NERDTree'
+use 'machakann/vim-highlightedyank'
+use 'frazrepo/vim-rainbow'
+use 'rockerBOO/awesome-neovim'
+use 'gruvbox-community/gruvbox'
+use 'liuchengxu/vim-clap'
+use 'ryanoasis/vim-devicons'
+use 'hrsh7th/vim-vsnip'
+use 'hrsh7th/vim-vsnip-integ'
 
-    -- Code completion
-	use {'neoclide/coc.nvim', branch = 'release'}
+-- Code completion
+use {'neoclide/coc.nvim', branch = 'release'}
 
-    -- Code commenter
-	use 'preservim/nerdcommenter'
+-- Code commenter
+use 'preservim/nerdcommenter'
 
-	use 'elzr/vim-json'
-	use 'vim-scripts/zoom.vim'
+use 'elzr/vim-json'
+use 'vim-scripts/zoom.vim'
 
-	-- zamykanie nawiasów
-	use '9mm/vim-closer'
+-- zamykanie nawiasów
+use '9mm/vim-closer'
 
-	use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
-	use {'andymass/vim-matchup', event = 'VimEnter'}
+use {'andymass/vim-matchup', event = 'VimEnter'}
 
-	-- sprawdzanie składni
-	use {
-		'dense-analysis/ale',
-		cmd = 'ALEEnable',
-		config = 'vim.cmd[[ALEEnable]]'
-	}
-
-	-- You can specify rocks in isolation
-	use_rocks 'penlight'
-	use_rocks {'lua-resty-http', 'lpeg'}
-
-	-- Plugins can have post-install/update hooks
-	use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
-	-- Post-install/update hook with neovim command
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-	-- do przeglądarki
-	use {
-		'glacambre/firenvim',
-		run = function() vim.fn['firenvim#install'](0) end
+-- sprawdzanie składni
+use {
+    'dense-analysis/ale',
+    cmd = 'ALEEnable',
+    config = 'vim.cmd[[ALEEnable]]'
     }
 
-	-- Use dependency and run lua function after load
-	use {
-		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-		config = function() require('gitsigns').setup() end
-	}
+-- You can specify rocks in isolation
+use_rocks 'penlight'
+use_rocks {'lua-resty-http', 'lpeg'}
+
+-- Plugins can have post-install/update hooks
+use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+-- Post-install/update hook with neovim command
+use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+-- do przeglądarki
+use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+    }
+
+-- Use dependency and run lua function after load
+use {
+    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
+    }
 end)
 EOF
 
@@ -254,37 +254,37 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
-	" Recently vim can merge signcolumn and number column into one
-	set signcolumn=number
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
 else
-	set signcolumn=yes
+    set signcolumn=yes
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]	=~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]	=~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-	inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-space> coc#refresh()
 else
-	inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-															\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -301,13 +301,13 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	elseif (coc#rpc#ready())
-		call CocActionAsync('doHover')
-	else
-		execute '!' . &keywordprg . " " . expand('<cword>')
-	endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -321,11 +321,11 @@ xmap <leader>f	<Plug>(coc-format-selected)
 nmap <leader>f	<Plug>(coc-format-selected)
 
 augroup mygroup
-	autocmd!
-	" Setup formatexpr specified filetype(s).
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	" Update signature help on jump placeholder.
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -351,12 +351,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -397,5 +397,5 @@ nnoremap <silent><nowait> <space>k	:<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p	:<C-u>CocListResume<CR>
 
 
-"##############################		END		###################################
+"##############################	   END	  ###################################
 "############################################################################

@@ -1,2 +1,2 @@
 # Myvimrc
-Kiedy byłem małym chłopcem...
+My own set of vim config, plugins, and embedded lua script.
