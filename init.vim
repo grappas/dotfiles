@@ -21,6 +21,9 @@ set smartcase
 set undofile
 set modifiable
 set scrolloff=5
+set showtabline=2
+set noshowmode
+set laststatus=2
 
 filetype plugin on
 
@@ -108,7 +111,7 @@ let g:ale_fix_on_save = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 fun! TrimWhitespace()
-    let l:save = winsaveview()
+  let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
@@ -143,15 +146,19 @@ inoremap ? ?<c-g>u
 "############################################################################
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type= 2
+let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+let g:airline#extensions#ale#enabled = 1
 "##############################	VIM-PLUG ###################################
 "############################################################################
 
 call plug#begin()
 
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "Plug 'tpope/vim-fugitive'
 "Plug 'vim-airline/vim-airline'
@@ -169,7 +176,6 @@ use 'wbthomason/packer.nvim'
 use 'preservim/NERDTree'
 use 'machakann/vim-highlightedyank'
 use 'frazrepo/vim-rainbow'
-use 'rockerBOO/awesome-neovim'
 use 'gruvbox-community/gruvbox'
 use 'liuchengxu/vim-clap'
 use 'ryanoasis/vim-devicons'
@@ -202,10 +208,6 @@ use {
     config = 'vim.cmd[[ALEEnable]]'
     }
 
--- You can specify rocks in isolation
-use_rocks 'penlight'
-use_rocks {'lua-resty-http', 'lpeg'}
-
 -- Plugins can have post-install/update hooks
 use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
@@ -220,12 +222,12 @@ use {
 
 
 -- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-use {
-    'junegunn/fzf',
-    run = function() vim.fn['fzf#install'](0) end
-    }
-use 'junegunn/fzf.vim'
-
+--use {
+--    'junegunn/fzf',
+--    run = function() vim.fn['fzf#install'](0) end
+--    }
+--use 'junegunn/fzf.vim'
+-- :with
 -- Use dependency and run lua function after load
 use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
@@ -287,7 +289,7 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
+  let col = col('.') - 1
     return !col || getline('.')[col - 1]	=~# '\s'
 endfunction
 
