@@ -11,7 +11,6 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 set hlsearch
 set incsearch
-set guifont=UbuntuMono\ Nerd\ Font:h12
 set clipboard=unnamedplus
 set relativenumber
 set tabstop=4 softtabstop=4
