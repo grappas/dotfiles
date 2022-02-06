@@ -165,6 +165,7 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip-integ'
 -- Git
 	use 'tpope/vim-fugitive'
+    use 'vim-airline/vim-airline'
 
 -- Code completion
 	use {'neoclide/coc.nvim', branch = 'release'}
