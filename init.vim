@@ -166,6 +166,7 @@ return require('packer').startup(function()
 -- Git
 	use 'tpope/vim-fugitive'
     use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
 
 -- Code completion
 	use {'neoclide/coc.nvim', branch = 'release'}
