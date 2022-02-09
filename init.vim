@@ -51,19 +51,6 @@ map <S-Tab> :bn<CR>
 map <silent> <C-kPlus> :ZoomIn<Enter>
 map <silent> <C-kMinus> :ZoomOut<Enter>
 
-" CoC
-" GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
-
 " Sweet Sweet FuGITive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
@@ -179,8 +166,6 @@ use 'frazrepo/vim-rainbow'
 use 'gruvbox-community/gruvbox'
 use 'liuchengxu/vim-clap'
 use 'ryanoasis/vim-devicons'
-use 'hrsh7th/vim-vsnip'
-use 'hrsh7th/vim-vsnip-integ'
 
 -- Code completion
 use {'neoclide/coc.nvim', branch = 'release'}
