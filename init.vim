@@ -21,9 +21,11 @@ set smartcase
 set undofile
 set modifiable
 set scrolloff=5
-set showtabline=2
 set noshowmode
 set laststatus=2
+syntax on
+
+
 
 filetype plugin on
 
@@ -67,11 +69,6 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-" Import plugins
-if filereadable(expand("~/.vimrc.plug"))
-    source ~/.vimrc.plug
-endif
-
 " Status bar config
 set statusline+=%#warningmsg#
 
@@ -109,7 +106,6 @@ command! -bang -nargs=* Rg
             \ call fzf#vim#grep(
             \	 'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
             \	 fzf#vim#with_preview(), <bang>0)
-syntax on
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -179,9 +175,6 @@ use 'elzr/vim-json'
 -- Do zooma (nie tylko GUI)
 use 'vim-scripts/zoom.vim'
 
--- zamykanie nawiasów
-use '9mm/vim-closer'
-
 use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
 use {'andymass/vim-matchup', event = 'VimEnter'}
@@ -246,7 +239,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=5
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
