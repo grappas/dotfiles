@@ -24,7 +24,7 @@ set scrolloff=5
 set noshowmode
 set laststatus=2
 syntax on
-
+let g:ale_sign_column_always = 1
 
 
 filetype plugin on
@@ -112,7 +112,6 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 au BufReadPost *.ezt set syntax=html
-au Filetype json exe "%!jq ."
 
 nnoremap o o<Esc>
 nnoremap O O<Esc>
