@@ -111,6 +111,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type= 2
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
 
 "##############################	VIM-PLUG ###################################
 "############################################################################
@@ -132,6 +133,7 @@ call plug#end()
 lua <<EOF
 
 return require('packer').startup(function()
+use 'dense-analysis/ale'
 use 'wbthomason/packer.nvim'
 use 'preservim/NERDTree'
 use 'machakann/vim-highlightedyank'
