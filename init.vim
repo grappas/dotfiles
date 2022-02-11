@@ -24,8 +24,6 @@ set scrolloff=5
 set noshowmode
 set laststatus=2
 syntax on
-let g:ale_sign_column_always = 1
-
 
 filetype plugin on
 
@@ -72,25 +70,6 @@ nnoremap <leader>k :m .-2<CR>==
 " Status bar config
 set statusline+=%#warningmsg#
 
-" Fix files automatically on save
-let g:ale_fixers = {}
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_linters = {
-            \'javascript': ['eslint'],
-            \'vue': ['eslint', 'stylelint', 'tsserver'],
-            \}
-
-let g:ale_fixers = {
-            \'javascript': ['prettier', 'eslint'],
-            \'vue': ['eslint', 'stylelint'],
-            \}
-
-let g:ale_linters_explicit = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_fix_on_save = 1
-
 " Close NERDTree when closing the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -133,7 +112,6 @@ let g:airline#extensions#tabline#tab_nr_type= 2
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-let g:airline#extensions#ale#enabled = 1
 "##############################	VIM-PLUG ###################################
 "############################################################################
 
@@ -177,13 +155,6 @@ use 'vim-scripts/zoom.vim'
 use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
 use {'andymass/vim-matchup', event = 'VimEnter'}
-
--- sprawdzanie składni
-use {
-    'dense-analysis/ale',
-    cmd = 'ALEEnable',
-    config = 'vim.cmd[[ALEEnable]]'
-    }
 
 -- Plugins can have post-install/update hooks
 use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
