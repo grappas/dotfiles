@@ -56,9 +56,6 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
-" Search and replace hotkey
-nnoremap H :%s//gc<left><left><left>
-
 " Move highlighted text up and down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -102,6 +99,15 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+"Terminal Mode
+
+tnoremap <Esc> <C-\><C-n>
+command Powershell :e term://powershell.exe<CR>
+command Zsh :e term://zsh<CR>
+
+"switch buffers
+nnoremap <C-h> :bprev<CR>
+nnoremap <C-j> :bnext<CR>
 
 "##############################	AIRLINE	###################################
 "############################################################################
@@ -133,7 +139,6 @@ call plug#end()
 lua <<EOF
 
 return require('packer').startup(function()
-use 'dense-analysis/ale'
 use 'wbthomason/packer.nvim'
 use 'preservim/NERDTree'
 use 'machakann/vim-highlightedyank'
@@ -141,6 +146,8 @@ use 'frazrepo/vim-rainbow'
 use 'gruvbox-community/gruvbox'
 use 'liuchengxu/vim-clap'
 use 'ryanoasis/vim-devicons'
+use 'timonv/vim-cargo'
+
 
 -- Code completion
 use {'neoclide/coc.nvim', branch = 'release'}
