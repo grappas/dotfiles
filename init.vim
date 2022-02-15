@@ -102,8 +102,8 @@ inoremap ? ?<c-g>u
 "Terminal Mode
 
 tnoremap <Esc> <C-\><C-n>
-command Powershell :e term://powershell.exe<CR>
-command Zsh :e term://zsh<CR>
+command Powershell :e term://powershell.exe
+command Zsh :e term://zsh
 
 "switch buffers
 nnoremap <C-h> :bprev<CR>
