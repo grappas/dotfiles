@@ -1,4 +1,47 @@
 
+"##############################	VIM-PLUG ###################################
+"############################################################################
+
+call plug#begin()
+
+Plug 'junegunn/vim-plug'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'preservim/NERDTree'
+Plug 'machakann/vim-highlightedyank'
+Plug 'frazrepo/vim-rainbow'
+Plug 'gruvbox-community/gruvbox'
+Plug 'liuchengxu/vim-clap'
+Plug 'ryanoasis/vim-devicons'
+Plug 'timonv/vim-cargo'
+Plug 'preservim/nerdcommenter'
+Plug 'elzr/vim-json'
+Plug 'vim-scripts/zoom.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'andymass/vim-matchup'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+Plug 'lewis6991/gitsigns.nvim'
+
+call plug#end()
+
+
+"##############################	 CONFIG   ###################################
+"############################################################################
+"
 let g:rainbow_active = 1
 set termguicolors
 set number
@@ -24,6 +67,8 @@ set scrolloff=5
 set noshowmode
 set laststatus=2
 syntax on
+" matchup
+let g:loaded_matchit = 1
 
 filetype plugin on
 
@@ -44,7 +89,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-p> :Files<CR>
 map <C-f> :Rg<CR>
 map <C-t> :e <cfile><cr>
+"
 
+" a co to?
 map <S-Tab> :bn<CR>
 
 " Zoom
@@ -119,87 +166,6 @@ let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 
-"##############################	VIM-PLUG ###################################
-"############################################################################
-
-call plug#begin()
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-"Plug 'tpope/vim-fugitive'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
-call plug#end()
-
-"##############################	PACKER	 ###################################
-"############################################################################
-
-lua <<EOF
-
-return require('packer').startup(function()
-use 'wbthomason/packer.nvim'
-use 'preservim/NERDTree'
-use 'machakann/vim-highlightedyank'
-use 'frazrepo/vim-rainbow'
-use 'gruvbox-community/gruvbox'
-use 'liuchengxu/vim-clap'
-use 'ryanoasis/vim-devicons'
-use 'timonv/vim-cargo'
-
-
--- Code completion
-use {'neoclide/coc.nvim', branch = 'release'}
-
--- Code commenter
-use 'preservim/nerdcommenter'
-
--- Do poprawiania składni JSONa
-use 'elzr/vim-json'
-
--- Do zooma (nie tylko GUI)
-use 'vim-scripts/zoom.vim'
-
-use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
-
-use {'andymass/vim-matchup', event = 'VimEnter'}
-
--- Plugins can have post-install/update hooks
-use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
--- Post-install/update hook with neovim command
-use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
--- do przeglądarki
-use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-    }
-
-
--- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
---use {
---    'junegunn/fzf',
---    run = function() vim.fn['fzf#install'](0) end
---    }
---use 'junegunn/fzf.vim'
--- :with
--- Use dependency and run lua function after load
-use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-    }
-
-use 'tpope/vim-fugitive'
-use 'vim-airline/vim-airline'
-use 'vim-airline/vim-airline-themes'
-end)
-EOF
-
-
-"##############################		END		###################################
-"############################################################################
 
 
 "##############################		COC		###################################
