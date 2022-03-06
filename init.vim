@@ -22,7 +22,6 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'gruvbox-community/gruvbox'
 Plug 'liuchengxu/vim-clap'
 Plug 'ryanoasis/vim-devicons'
-Plug 'timonv/vim-cargo'
 Plug 'preservim/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'vim-scripts/zoom.vim'
@@ -69,6 +68,9 @@ set laststatus=2
 syntax on
 " matchup
 let g:loaded_matchit = 1
+
+" fast cargo call
+command CRun :w | !cargo run
 
 filetype plugin on
 
