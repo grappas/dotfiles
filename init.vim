@@ -65,6 +65,7 @@ set modifiable
 set scrolloff=5
 set noshowmode
 set laststatus=2
+autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 syntax on
 " matchup
 let g:loaded_matchit = 1
