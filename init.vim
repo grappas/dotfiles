@@ -56,10 +56,12 @@ set mouse=a
 set showmatch
 set title
 let g:gruvbox_italic=1
+
 let g:gruvbox_transparent_bg=1
 set termguicolors
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 colorscheme gruvbox
+
 set hlsearch
 set incsearch
 set clipboard=unnamedplus
@@ -76,6 +78,16 @@ set noshowmode
 set laststatus=2
 autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 syntax on
+
+if has('win64')
+    set shell=powershell.exe
+    set shellxquote=
+    let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+    let &shellquote   = ''
+    let &shellpipe    = '| Out-File -Encoding UTF8 %s'
+    let &shellredir   = '| Out-File -Encoding UTF8 %s'
+endif
+
 " matchup
 let g:loaded_matchit = 1
 
