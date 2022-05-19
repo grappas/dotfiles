@@ -138,9 +138,6 @@ nnoremap <leader>k :m .-2<CR>==
 " Status bar config
 set statusline+=%#warningmsg#
 
-" Close NERDTree when closing the last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -180,6 +177,10 @@ command Zsh :e term://zsh
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-j> :bnext<CR>
 
+"toggle comment
+nnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
+vnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
+inoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 
 "##############################	AIRLINE	###################################
 "############################################################################
