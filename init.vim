@@ -39,12 +39,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
 
-call plug#end()
 if has('linux')
-    call plug#begin()
     Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
-    call plug#end()
 endif
+
+call plug#end()
 
 "##############################	 CONFIG   ###################################
 "############################################################################
