@@ -170,8 +170,7 @@ inoremap ? ?<c-g>u
 "Terminal Mode
 
 tnoremap <Esc> <C-\><C-n>
-command Powershell :e term://powershell.exe
-command Zsh :e term://zsh
+command Terminal :below 7split | terminal
 
 "switch buffers
 nnoremap <C-h> :bprev<CR>
