@@ -8,3 +8,6 @@ set! termguicolors
 autocmd! VimEnter * hi
 colorscheme gruvbox
 
+nnoremap <C-S-v> <c-\><c-n>"+p
+tnoremap <C-S-v> <c-\><c-n>"+pi
+cnoremap <C-S-v> <c-r>+
