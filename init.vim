@@ -60,9 +60,6 @@ set showmatch
 set title
 let g:gruvbox_italic=1
 
-let g:gruvbox_transparent_bg=1
-set termguicolors
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 colorscheme gruvbox
 
 set hlsearch
