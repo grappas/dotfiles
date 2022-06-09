@@ -51,6 +51,8 @@ call plug#end()
 "##############################	 CONFIG   ###################################
 "############################################################################
 "
+set listchars=tab:→\ ,trail:·,space:-,multispace:---+,precedes:«,extends:»,eol:¬
+set list
 let g:rainbow_active = 1
 set termguicolors
 set number
