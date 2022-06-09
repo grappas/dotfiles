@@ -17,6 +17,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
+
 Plug 'machakann/vim-highlightedyank'
 Plug 'frazrepo/vim-rainbow'
 Plug 'gruvbox-community/gruvbox'
