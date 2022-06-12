@@ -8,6 +8,8 @@ Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
@@ -51,8 +53,6 @@ call plug#end()
 "##############################	 CONFIG   ###################################
 "############################################################################
 "
-set listchars=tab:→\ ,trail:·,space:-,multispace:---+,precedes:«,extends:»,eol:¬
-set list
 let g:rainbow_active = 1
 set termguicolors
 set number
@@ -402,6 +402,7 @@ require("presence"):setup({
 
 EOF
 
+
 lua << EOF
 
 local config = {
@@ -722,4 +723,17 @@ local load_config = function()
   })
 end
 
+EOF
+
+
+lua << EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 EOF
