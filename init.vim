@@ -44,6 +44,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
 
+Plug 'airblade/vim-rooter'
+
 if has('linux')
     Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 endif
