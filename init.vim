@@ -101,6 +101,7 @@ let g:loaded_matchit = 1
 " fast cargo call
 command CRun :w | !cargo run
 command Bd :b# | bw# | bn | bp
+command Bdd :b# | bw!# | bn | bp
 
 map <C-n> :NeoTreeFocusToggle<CR>
 
