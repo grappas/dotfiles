@@ -8,8 +8,9 @@ Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 't9md/vim-choosewin'
 
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
@@ -94,13 +95,17 @@ if has('win64')
     let &shellpipe    = '| Out-File -Encoding UTF8 %s'
     let &shellredir   = '| Out-File -Encoding UTF8 %s'
 endif
+nmap  -  <Plug>(choosewin)
 
 " matchup
+"
 let g:loaded_matchit = 1
+let g:choosewin_overlay_enable = 1
 
 " fast cargo call
 command CRun :w | !cargo run
 command Bd :b# | bw# | bn | bp
+command Bdw :w | b# | bw# | bn | bp
 command Bdd :b# | bw!# | bn | bp
 
 map <C-n> :NeoTreeFocusToggle<CR>
