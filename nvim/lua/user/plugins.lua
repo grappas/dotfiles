@@ -63,12 +63,8 @@ return packer.startup(function(use)
 	-- LSP
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
     use { "williamboman/mason.nvim" }
+    use { 'williamboman/mason-lspconfig.nvim' }
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
-
-	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter"
-	})
 
     -- fzf-lua
     use { 'ibhagwan/fzf-lua' }

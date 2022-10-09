@@ -6,4 +6,6 @@ require "user.presence"
 require "user.blankline"
 require "user.neotree"
 require "user.treesitter"
+require "user.mason"
+require "user.nvim-lspconfig"
 EOF
