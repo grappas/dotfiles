@@ -9,7 +9,7 @@ command Bdd :b# | bw!# | bn | bp
 map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
-map <C-p> :Files<CR>
+map <C-p> :FZF<CR>
 map <C-f> :Rg<CR>
 map <C-t> :e <cfile><cr>
 "

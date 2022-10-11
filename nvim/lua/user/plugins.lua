@@ -61,10 +61,11 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig"}) -- enable LSP
     use { "williamboman/mason.nvim" }
     use { 'williamboman/mason-lspconfig.nvim' }
+	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
+    use 'mfussenegger/nvim-dap'
 
     -- fzf-lua
     use { 'ibhagwan/fzf-lua' }
