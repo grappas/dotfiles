@@ -61,9 +61,11 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
 
 	-- LSP
-    use { "williamboman/mason.nvim" }
-    use { 'williamboman/mason-lspconfig.nvim' }
-	use({ "neovim/nvim-lspconfig"}) -- enable LSP
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
     use 'mfussenegger/nvim-dap'
 
@@ -112,6 +114,7 @@ return packer.startup(function(use)
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
     }
+    use { 'echasnovski/mini.nvim' }
 
     if LINUX then
         use {'sakhnik/nvim-gdb',
