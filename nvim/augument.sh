@@ -2,7 +2,7 @@
 
 if [ -L sysinit.vim ]
 then
-	rm sysinit.vim
+    rm sysinit.vim
 fi
 ln -s $PWD/init.vim $PWD/sysinit.vim
 
@@ -33,6 +33,6 @@ fi
 #sudo cat ginit.vim > /etc/xdg/nvim/ginit.vim
 #if [ -d /etc/xdg/nvim/lua ]
 #then
-    #rm -rf /etc/xdg/nvim/lua
+#rm -rf /etc/xdg/nvim/lua
 #fi
 #cp -r lua /etc/xdg/nvim
