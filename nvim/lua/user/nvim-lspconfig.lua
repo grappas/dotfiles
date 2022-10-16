@@ -71,13 +71,36 @@ local lsp_flags = {
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lspconfig = require'lspconfig'
 
 require("mason-lspconfig").setup_handlers {
     function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {
-            capabilities = capabilities
+        lspconfig[server_name].setup {
+            capabilities = capabilities,
         }
     end,
 }
 
+lspconfig.sumneko_lua.setup{
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
+require("rust-tools").setup({
+    tools = {
+        inlay_hints = {
+            auto = false,
+            parameter_hints_prefix = " <- ",
+            other_hints_prefix = " => ",
+        },
+    }
+})
+
+lspconfig.clangd.setup{
+
+}
