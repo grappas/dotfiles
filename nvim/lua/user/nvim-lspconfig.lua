@@ -78,6 +78,19 @@ require("mason-lspconfig").setup_handlers {
         lspconfig[server_name].setup {
             capabilities = capabilities,
         }
+        vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = "LspAttach_inlayhints",
+            callback = function(args)
+                if not (args.data and args.data.client_id) then
+                    return
+                end
+
+                local bufnr = args.buf
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                require("lsp-inlayhints").on_attach(client, bufnr)
+            end,
+        })
     end,
 }
 
@@ -86,21 +99,10 @@ lspconfig.sumneko_lua.setup{
         Lua = {
             diagnostics = {
                 globals = { 'vim' }
+            },
+            hint = {
+                enable = true,
             }
-        }
-    }
-}
-
-require("rust-tools").setup({
-    tools = {
-        inlay_hints = {
-            auto = false,
-            parameter_hints_prefix = " <- ",
-            other_hints_prefix = " => ",
         },
-    }
-})
-
-lspconfig.clangd.setup{
-
+    },
 }

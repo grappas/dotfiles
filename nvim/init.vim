@@ -8,6 +8,6 @@ require "user.neotree"
 require "user.treesitter"
 require "user.cmp"
 require "user.nvim-lspconfig"
-require "user.rust-tools"
+--require "user.rust-tools"
 require "user.mini"
 EOF

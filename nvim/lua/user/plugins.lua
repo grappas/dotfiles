@@ -79,13 +79,15 @@ return packer.startup(function(use)
         'lvimuser/lsp-inlayhints.nvim',
         config = function()
             require("lsp-inlayhints").setup{
-                parameter_hints = {
-                    prefix = " <- "
+                inlay_hints = {
+                    parameter_hints = {
+                        prefix = " <- "
+                    }
                 }
             }
         end
     })
-    use({'simrat39/rust-tools.nvim'})
+    --use({'simrat39/rust-tools.nvim'})
 
     -- fzf-lua
     use { 'ibhagwan/fzf-lua' }
