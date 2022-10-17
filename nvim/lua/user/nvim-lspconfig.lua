@@ -11,23 +11,14 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 
     ensure_installed = {
-    "awk-language-server",
-    "bash-debug-adapter",
-    "bash-language-server",
-    "clang-format",
-    "clangd",
-    "cmake-language-server",
-    "cmakelang",
-    "cpplint",
-    "cpptools",
-    "cspell",
-    "json-lsp",
-    "lua-language-server",
-    "prettier",
-    "rust-analyzer",
-    "typescript-language-server",
-    "vim-language-server"
-}
+        "sumneko_lua",
+        "pyright",
+        "awk_ls",
+        "bashls",
+        "clangd",
+        "cmake",
+        "rust_analyzer",
+    }
 
 })
 
