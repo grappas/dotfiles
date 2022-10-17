@@ -109,6 +109,7 @@ return packer.startup(function(use)
 
     use { 'frazrepo/vim-rainbow' }
     use { 'gruvbox-community/gruvbox' }
+
     use { 'liuchengxu/vim-clap' }
     use { 'ryanoasis/vim-devicons' }
     use { 'preservim/nerdcommenter' }

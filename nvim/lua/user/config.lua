@@ -9,6 +9,9 @@ set linebreak
 set mouse=a
 set showmatch
 set title
+set foldmethod=indent
+set foldlevelstart=99
+
 let g:gruvbox_italic=1
 
 colorscheme gruvbox
