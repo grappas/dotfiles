@@ -17,6 +17,9 @@ require("mason-lspconfig").setup({
         "bashls",
         "clangd",
         "cmake",
+        "jsonls",
+        "gopls",
+        "vimls",
         "rust_analyzer",
     }
 
