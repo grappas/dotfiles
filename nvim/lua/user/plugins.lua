@@ -135,6 +135,15 @@ return packer.startup(function(use)
         branch = "v2.x",
     }
     use { 'echasnovski/mini.nvim' }
+    use {
+        'gorbit99/codewindow.nvim',
+        config = function()
+            local codewindow = require('codewindow')
+            codewindow.setup()
+            codewindow.apply_default_keybinds()
+            codewindow.open_minimap()
+        end,
+    }
 
     if LINUX then
         use {'sakhnik/nvim-gdb',
