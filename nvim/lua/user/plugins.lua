@@ -135,27 +135,9 @@ return packer.startup(function(use)
         branch = "v2.x",
     }
     use { 'echasnovski/mini.nvim' }
-    use {
-        'gorbit99/codewindow.nvim',
-        config = function()
-            local codewindow = require('codewindow')
-            codewindow.setup({
-                exclude_filetypes = {
-                    'neo-tree',
-                    'terminal',
-                    'Terminal',
-                    'term',
-                    'zsh',
-                    'powershell',
-                    'Powershell',
-                    'powershell.exe',
-                    'Powershell.exe'
-                }
-            })
-            codewindow.apply_default_keybinds()
-            codewindow.open_minimap()
-        end,
-    }
+    use { 'gorbit99/codewindow.nvim' }
+    -- minimap let's try it
+    use ({'ziontee113/neo-minimap'})
 
     if LINUX then
         use {'sakhnik/nvim-gdb',
