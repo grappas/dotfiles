@@ -139,7 +139,19 @@ return packer.startup(function(use)
         'gorbit99/codewindow.nvim',
         config = function()
             local codewindow = require('codewindow')
-            codewindow.setup()
+            codewindow.setup({
+                exclude_filetypes = {
+                    'neo-tree',
+                    'terminal',
+                    'Terminal',
+                    'term',
+                    'zsh',
+                    'powershell',
+                    'Powershell',
+                    'powershell.exe',
+                    'Powershell.exe'
+                }
+            })
             codewindow.apply_default_keybinds()
             codewindow.open_minimap()
         end,

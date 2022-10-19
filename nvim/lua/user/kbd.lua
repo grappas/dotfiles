@@ -9,8 +9,9 @@ command Bdd :b# | bw!# | bn | bp
 map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
-map <C-p> :FZF<CR>
-map <C-f> :Rg<CR>
+map <C-p> :FzfLua files<CR>
+map <C-f> :FzfLua grep<CR><CR>
+nnoremap <leader>p :FzfLua registers<CR>
 map <C-t> :e <cfile><cr>
 "
 
