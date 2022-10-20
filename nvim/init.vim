@@ -10,4 +10,6 @@ require "user.cmp"
 require "user.nvim-lspconfig"
 --require "user.rust-tools"
 require "user.mini"
+require "user.neo-minimap"
+require "user.codewindow"
 EOF

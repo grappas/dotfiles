@@ -5,7 +5,7 @@ local nm = require("neo-minimap")
 -- works only when you have only 1 neo-minimap config file
 nm.source_on_save("/path/to/your/neo-minimap/config-file") -- optional
 
-nm.set({"keymap1", "keymap2"}, { "*.your_file_extension", "your_autocmd_pattern" }, {
+nm.set( "zi", { "*.lua", "*.cpp" }, {
      events = { "BufEnter" },
 
      -- lua table, values inside can be type `string` or `number`
