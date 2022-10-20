@@ -9,10 +9,17 @@ command Bdd :b# | bw!# | bn | bp
 map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
+if has('unix')
 map <C-p> :FzfLua files<CR>
 map <C-f> :FzfLua grep<CR><CR>
 nnoremap <leader>pp :FzfLua registers<CR>
 map <C-t> :e <cfile><cr>
+endif
+if has('win64')
+map <C-p> :Files<CR>
+map <C-f> :Rg<CR><CR>
+map <C-t> :e <cfile><cr>
+endif
 "
 
 " a co to?

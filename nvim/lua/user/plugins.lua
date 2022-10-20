@@ -91,6 +91,8 @@ return packer.startup(function(use)
 
     -- fzf-lua
     use { 'ibhagwan/fzf-lua' }
+    use ({'junegunn/fzf.vim'})
+
     use { 'junegunn/fzf', run = './install --bin', }
 
     -- transition
