@@ -70,6 +70,7 @@ local lspconfig = require'lspconfig'
 require("mason-lspconfig").setup_handlers {
     function (server_name) -- default handler (optional)
         lspconfig[server_name].setup {
+            on_attach = on_attach,
             capabilities = capabilities,
         }
         vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
