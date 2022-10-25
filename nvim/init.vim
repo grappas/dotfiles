@@ -12,4 +12,5 @@ require "user.nvim-lspconfig"
 require "user.mini"
 require "user.neo-minimap"
 require "user.codewindow"
+require "user.print_r"
 EOF

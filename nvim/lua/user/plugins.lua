@@ -45,7 +45,6 @@ return packer.startup(function(use)
 
     use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
     use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
-    use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
     use { 'ibhagwan/smartyank.nvim',
         config = function() require'smartyank'.setup {} end
     }
@@ -73,7 +72,9 @@ return packer.startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
-    use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
+    --use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
+    --use({ "jayp0521/mason-null-ls.nvim" }) -- for formatters and linters
+
     use 'mfussenegger/nvim-dap'
     use({
         'lvimuser/lsp-inlayhints.nvim',

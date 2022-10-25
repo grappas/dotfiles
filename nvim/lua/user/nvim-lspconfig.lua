@@ -25,6 +25,26 @@ require("mason-lspconfig").setup({
 
 })
 
+--require("null-ls").setup({
+    --sources = {
+        --require("null-ls").builtins.formatting.prettierd,
+        --require("null-ls").builtins.diagnostics.eslint_d,
+    --},
+--})
+
+--require("mason-null-ls").setup({
+    --ensure_installed = {
+        --"stylua",
+        --"jq",
+        --"clangd-format",
+        --"eslint_d",
+        --"cpplint",
+        --"cspell",
+        --"prettier",
+        --"prettierd"
+    --}
+--})
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -58,11 +78,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require'lspconfig'
