@@ -10,9 +10,9 @@ map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
 if has('unix')
-map <C-p> :FzfLua files<CR>
-map <C-f> :FzfLua grep<CR><CR>
-nnoremap <leader>pp :FzfLua registers<CR>
+map <C-p> :Telescope find_files<CR>
+map <C-f> :Telescope live_grep<CR>
+nnoremap <leader>pp :Telescope registers<CR>
 map <C-t> :e <cfile><cr>
 endif
 if has('win64')

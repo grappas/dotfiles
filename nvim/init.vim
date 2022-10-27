@@ -13,4 +13,5 @@ require "user.mini"
 require "user.neo-minimap"
 require "user.codewindow"
 require "user.print_r"
+require "user.telescope"
 EOF

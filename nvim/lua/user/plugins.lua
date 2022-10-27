@@ -91,10 +91,10 @@ return packer.startup(function(use)
     --use({'simrat39/rust-tools.nvim'})
 
     -- fzf-lua
-    use { 'ibhagwan/fzf-lua' }
-    use ({'junegunn/fzf.vim'})
-
-    use { 'junegunn/fzf', run = './install --bin', }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     -- transition
     use { 't9md/vim-choosewin' }
