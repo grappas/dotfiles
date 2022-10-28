@@ -142,6 +142,8 @@ return packer.startup(function(use)
     -- minimap let's try it
     use ({'ziontee113/neo-minimap'})
 
+    use ({'Shatur/neovim-session-manager'})
+
     if LINUX then
         use {'sakhnik/nvim-gdb',
             run = ':!./install.sh'}
