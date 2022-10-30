@@ -14,5 +14,4 @@ require "user.neo-minimap"
 require "user.codewindow"
 require "user.print_r"
 require "user.telescope"
-require "user.neovim-session-manager"
 EOF
