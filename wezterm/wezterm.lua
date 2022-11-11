@@ -21,4 +21,5 @@ return {
     color_scheme = 'Gruvbox Dark',
     window_background_opacity = 0.9,
     keys = mykeys,
+    default_prog = { 'zsh' },
 }
