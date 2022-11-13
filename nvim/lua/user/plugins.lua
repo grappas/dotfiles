@@ -142,6 +142,24 @@ return packer.startup(function(use)
     -- minimap let's try it
     use ({'ziontee113/neo-minimap'})
 
+    use {
+        "cshuaimin/ssr.nvim",
+        module = "ssr",
+        -- Calling setup is optional.
+        config = function()
+            require("ssr").setup {
+                min_width = 50,
+                min_height = 5,
+                keymaps = {
+                    close = "q",
+                    next_match = "n",
+                    prev_match = "N",
+                    replace_all = "<leader><cr>",
+                },
+            }
+        end
+    }
+
     if LINUX then
         use {'sakhnik/nvim-gdb',
             run = ':!./install.sh'}
