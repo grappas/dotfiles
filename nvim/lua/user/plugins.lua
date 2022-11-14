@@ -115,7 +115,13 @@ return packer.startup(function(use)
 
     use { 'liuchengxu/vim-clap' }
     use { 'ryanoasis/vim-devicons' }
-    use { 'preservim/nerdcommenter' }
+    --use { 'preservim/nerdcommenter' }
+    use ({
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    })
     use { 'elzr/vim-json' }
     use { 'vim-scripts/zoom.vim' }
 
