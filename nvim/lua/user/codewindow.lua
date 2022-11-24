@@ -14,4 +14,3 @@ codewindow.setup({
     }
 })
 codewindow.apply_default_keybinds()
-codewindow.open_minimap()
