@@ -166,21 +166,6 @@ return packer.startup(function(use)
         end
     }
 
-    use({
-        "aarondiel/spread.nvim",
-        after = "nvim-treesitter",
-        config = function()
-            local spread = require("spread")
-            local default_options = {
-                silent = true,
-                noremap = true
-            }
-
-            vim.keymap.add("n", "<leader>ss", spread.out, default_options)
-            vim.keymap.add("n", "<leader>ssc", spread.combine, default_options)
-        end
-    })
-
     if LINUX then
         use {'sakhnik/nvim-gdb',
             run = ':!./install.sh'}
