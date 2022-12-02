@@ -9,18 +9,10 @@ command Bdd :b# | bw!# | bn | bp
 map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
-if has('unix')
 map <C-p> :Telescope find_files<CR>
 map <C-f> :Telescope live_grep<CR>
 nnoremap <leader>pp :Telescope registers<CR>
 map <C-t> :e <cfile><cr>
-endif
-if has('win64')
-map <C-p> :Files<CR>
-map <C-f> :Rg<CR><CR>
-map <C-t> :e <cfile><cr>
-endif
-"
 
 " a co to?
 map <S-Tab> :bn<CR>
