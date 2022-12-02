@@ -17,10 +17,23 @@ for i = 1, 8 do
     })
 end
 
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    default_prog = { 'powershell.exe' }
+else
+    default_prog = { 'zsh' }
+end
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    font = wezterm.font 'VictorMono NF'
+else
+    font = wezterm.font 'VictorMono Nerd Font'
+end
+
 return {
-    font = wezterm.font 'VictorMono Nerd Font',
+    font = font,
     color_scheme = 'Gruvbox Dark',
     window_background_opacity = 0.9,
+    default_prog = default_prog,
     keys = {
         {
             key = 'F1',
@@ -82,6 +95,5 @@ return {
             mods = 'CMD',
             action = wezterm.action.DisableDefaultAssignment,
         },
-    },
-    default_prog = { 'zsh' },
+    }
 }
