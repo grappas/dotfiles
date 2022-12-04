@@ -54,6 +54,9 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 au BufReadPost *.ezt set syntax=html
 
 nnoremap o o<Esc>
