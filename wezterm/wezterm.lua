@@ -29,11 +29,19 @@ else
     font = wezterm.font 'VictorMono Nerd Font'
 end
 
+
+-- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+--     enable_wayland = false
+-- else
+--     enable_wayland = true
+-- end
+
 return {
     font = font,
     color_scheme = 'Gruvbox Dark',
     window_background_opacity = 0.9,
     default_prog = default_prog,
+    -- enable_wayland = enable_wayland,
     keys = {
         {
             key = 'F1',
