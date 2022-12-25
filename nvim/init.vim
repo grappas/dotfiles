@@ -1,7 +1,7 @@
 lua << EOF
+
 require "user.plugins"
 require "user.config"
-require "user.kbd"
 require "user.presence"
 require "user.blankline"
 require "user.neotree"
@@ -14,4 +14,7 @@ require "user.neo-minimap"
 require "user.codewindow"
 require "user.print_r"
 require "user.telescope"
+
+require "user.kbd"
+
 EOF
