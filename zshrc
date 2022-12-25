@@ -126,3 +126,8 @@ alias cp="rsync -avz"
 
 export HISTCONTROL=erasedups:ignorespace
 export HISTIGNORE='history*:ls*'
+
+if [ -f ~/.myzshrc ]
+then
+    source ~/.myzshrc
+fi
