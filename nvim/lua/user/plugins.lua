@@ -166,23 +166,23 @@ return packer.startup(function(use)
         end
     }
 
-    use({
-        'dense-analysis/neural',
-        config = function()
-            require('neural').setup({
-                mappings = {
-                    swift = '<C-b>',
-                },
-                open_ai = {
-                    api_key = vim.env.OPENAI_API_KEY
-                }
-            })
-        end,
-        requires = {
-            'MunifTanjim/nui.nvim',
-            'ElPiloto/significant.nvim'
-        }
-    })
+    -- use({
+    --     'dense-analysis/neural',
+    --     config = function()
+    --         require('neural').setup({
+    --             mappings = {
+    --                 swift = '<C-b>',
+    --             },
+    --             open_ai = {
+    --                 api_key = vim.env.OPENAI_API_KEY
+    --             }
+    --         })
+    --     end,
+    --     requires = {
+    --         'MunifTanjim/nui.nvim',
+    --         'ElPiloto/significant.nvim'
+    --     }
+    -- })
 
     if LINUX then
         use {'sakhnik/nvim-gdb',
