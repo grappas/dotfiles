@@ -11,7 +11,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 
     ensure_installed = {
-        "sumneko_lua",
+        "lua_ls",
         "pyright",
         "awk_ls",
         "bashls",
@@ -104,7 +104,7 @@ require("mason-lspconfig").setup_handlers {
     end,
 }
 
-lspconfig.sumneko_lua.setup{
+lspconfig.lua_ls.setup{
     settings = {
         Lua = {
             diagnostics = {
