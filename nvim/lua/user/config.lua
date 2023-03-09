@@ -1,4 +1,5 @@
 vim.cmd([[
+
 let g:rainbow_active = 1
 set termguicolors
 set number
@@ -59,9 +60,6 @@ set updatetime=50
 set shortmess+=c
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-"##############################	AIRLINE	###################################
-"############################################################################
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 1

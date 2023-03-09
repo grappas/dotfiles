@@ -41,7 +41,7 @@ return {
     color_scheme = 'Gruvbox Dark',
     window_background_opacity = 0.9,
     default_prog = default_prog,
-    enable_wayland = false,
+    enable_wayland = true,
     -- enable_wayland = enable_wayland,
     keys = {
         {

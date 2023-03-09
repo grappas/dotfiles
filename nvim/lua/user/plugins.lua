@@ -1,82 +1,50 @@
-
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
         "git",
         "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
-    print("Installing packer close and reopen Neovim...")
-    vim.cmd([[packadd packer.nvim]])
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
--- Use a protected call so we dont error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
-end
-
--- Have packer use a popup window
-packer.init({
-    display = {
-        open_fn = function()
-            return require("packer.util").float({ border = "rounded" })
-        end,
-    },
-})
-
--- Install your plugins here
-return packer.startup(function(use)
-    -- My plugins here
-
-    use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
-    use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
-    use { 'ibhagwan/smartyank.nvim',
+require( 'lazy' ).setup({
+    'folke/lazy.nvim',
+    'nvim-lua/plenary.nvim',
+    { 'ibhagwan/smartyank.nvim',
         config = function() require'smartyank'.setup {} end
-    }
-    use ({'bronson/vim-crosshairs'})
+    },
+    'bronson/vim-crosshairs',
 
     -- cmp plugins
-    use({ "hrsh7th/nvim-cmp"}) -- The completion plugin
-    use({ "hrsh7th/cmp-buffer"}) -- buffer completions
-    use({ "hrsh7th/cmp-path"}) -- path completions
-    use({ "hrsh7th/cmp-cmdline"}) -- commandline completions
-    use({ "saadparwaiz1/cmp_luasnip"}) -- snippet completions
-    use({ "hrsh7th/cmp-nvim-lsp"})
-    use({ "hrsh7th/cmp-nvim-lua"})
+    'hrsh7th/nvim-cmp', -- The completion plugin
+    'hrsh7th/cmp-buffer', -- buffer completions
+    'hrsh7th/cmp-path', -- path completions
+    'hrsh7th/cmp-cmdline', -- commandline completions
+    'saadparwaiz1/cmp_luasnip', -- snippet completions
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lua',
 
     -- snippets
     --use({ "L3MON4D3/LuaSnip"}) --snippet engine
     --use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
 
-    use ({'hrsh7th/vim-vsnip'})
-    use ({'hrsh7th/cmp-vsnip'})
+    'hrsh7th/vim-vsnip',
+    'hrsh7th/cmp-vsnip',
 
     -- LSP
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+
     --use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
     --use({ "jayp0521/mason-null-ls.nvim" }) -- for formatters and linters
 
-    use 'mfussenegger/nvim-dap'
-    use({
+    'mfussenegger/nvim-dap',
+    {
         'lvimuser/lsp-inlayhints.nvim',
         config = function()
             require("lsp-inlayhints").setup{
@@ -87,68 +55,68 @@ return packer.startup(function(use)
                 }
             }
         end
-    })
+    },
     --use({'simrat39/rust-tools.nvim'})
 
     -- fzf-lua
-    use {
+    {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
 
     -- transition
-    use { 't9md/vim-choosewin' }
-    use { 'lukas-reineke/indent-blankline.nvim' }
+    't9md/vim-choosewin',
+    'lukas-reineke/indent-blankline.nvim',
 
-    use { 'nvim-lua/popup.nvim' }
-    use { 'andweeb/presence.nvim' }
+    'nvim-lua/popup.nvim',
+    'andweeb/presence.nvim',
 
-    use { 'tpope/vim-fugitive' }
-    use { 'vim-airline/vim-airline' }
-    use { 'vim-airline/vim-airline-themes' }
+    'tpope/vim-fugitive',
+    'vim-airline/vim-airline',
+    'vim-airline/vim-airline-themes',
 
-    use { 'RishabhRD/popfix' }
-    use { 'RishabhRD/nvim-cheat.sh' }
+    'RishabhRD/popfix',
+    'RishabhRD/nvim-cheat.sh',
 
-    use { 'frazrepo/vim-rainbow' }
-    use { 'gruvbox-community/gruvbox' }
+    'frazrepo/vim-rainbow',
+    'gruvbox-community/gruvbox',
 
-    use { 'liuchengxu/vim-clap' }
-    use { 'ryanoasis/vim-devicons' }
+    'liuchengxu/vim-clap',
+    'ryanoasis/vim-devicons',
     --use { 'preservim/nerdcommenter' }
-    use ({
+    {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
-    })
-    use { 'elzr/vim-json' }
-    use { 'vim-scripts/zoom.vim' }
+    },
+    'elzr/vim-json',
+    'vim-scripts/zoom.vim',
 
-    use { 'andymass/vim-matchup' }
+    'andymass/vim-matchup',
 
-    use {
+    {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+        build = ':TSUpdate'
+    },
 
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    { "iamcco/markdown-preview.nvim", build = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
 
-    use { 'lewis6991/gitsigns.nvim' }
-    use { 'kyazdani42/nvim-web-devicons' }
-    use { 'MunifTanjim/nui.nvim' }
-    use { 'airblade/vim-rooter' }
+    'lewis6991/gitsigns.nvim',
+    'kyazdani42/nvim-web-devicons',
+    'MunifTanjim/nui.nvim',
+    'airblade/vim-rooter',
 
-    use {
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-    }
-    use { 'echasnovski/mini.nvim' }
-    use { 'gorbit99/codewindow.nvim' }
+    },
+    'echasnovski/mini.nvim',
+    'gorbit99/codewindow.nvim',
     -- minimap let's try it
-    use ({'ziontee113/neo-minimap'})
+    'ziontee113/neo-minimap',
 
-    use {
+    {
         "cshuaimin/ssr.nvim",
         module = "ssr",
         -- Calling setup is optional.
@@ -164,33 +132,7 @@ return packer.startup(function(use)
                 },
             }
         end
-    }
-
-    -- use({
-    --     'dense-analysis/neural',
-    --     config = function()
-    --         require('neural').setup({
-    --             mappings = {
-    --                 swift = '<C-b>',
-    --             },
-    --             open_ai = {
-    --                 api_key = vim.env.OPENAI_API_KEY
-    --             }
-    --         })
-    --     end,
-    --     requires = {
-    --         'MunifTanjim/nui.nvim',
-    --         'ElPiloto/significant.nvim'
-    --     }
-    -- })
-
-    if LINUX then
-        use {'sakhnik/nvim-gdb',
-            run = ':!./install.sh'}
-    end
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+    },
+    {'sakhnik/nvim-gdb',
+        build = ':!./install.sh'},
+})
