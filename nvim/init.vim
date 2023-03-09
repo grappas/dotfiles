@@ -1,18 +1,18 @@
 lua << EOF
 
-require "user.plugins"
-require "user.presence"
-require "user.config"
-require "user.blankline"
-require "user.neotree"
-require "user.treesitter"
-require "user.cmp"
-require "user.nvim-lspconfig"
-require "user.mini"
-require "user.neo-minimap"
-require "user.codewindow"
-require "user.print_r"
-require "user.telescope"
-require "user.kbd"
+require("user.config.plugins")
+require("user.config.presence")
+require("user.config.config")
+require("user.config.blankline")
+require("user.config.neotree")
+require("user.config.treesitter")
+require("user.config.cmp")
+require("user.config.nvim-lspconfig")
+require("user.config.mini")
+require("user.config.neo-minimap")
+require("user.config.codewindow")
+require("user.config.print_r")
+require("user.config.telescope")
+require("user.config.kbd")
 
 EOF
