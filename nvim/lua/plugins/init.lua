@@ -1,23 +1,9 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require( 'lazy' ).setup({
+return {
     'folke/lazy.nvim',
     'nvim-lua/plenary.nvim',
     { 'ibhagwan/smartyank.nvim',
         config = function() require'smartyank'.setup {} end
     },
-    'bronson/vim-crosshairs',
 
     -- cmp plugins
     'hrsh7th/nvim-cmp', -- The completion plugin
@@ -72,14 +58,11 @@ require( 'lazy' ).setup({
     'andweeb/presence.nvim',
 
     'tpope/vim-fugitive',
-    'vim-airline/vim-airline',
-    'vim-airline/vim-airline-themes',
 
     'RishabhRD/popfix',
     'RishabhRD/nvim-cheat.sh',
 
     'frazrepo/vim-rainbow',
-    'gruvbox-community/gruvbox',
 
     'liuchengxu/vim-clap',
     'ryanoasis/vim-devicons',
@@ -135,4 +118,10 @@ require( 'lazy' ).setup({
     },
     {'sakhnik/nvim-gdb',
         build = ':!./install.sh'},
-})
+    {
+        'willothy/flatten.nvim',
+        config = true
+        -- or pass configuration with
+        -- opts = {  }
+    }
+}

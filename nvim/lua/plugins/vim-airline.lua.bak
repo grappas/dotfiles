@@ -1,0 +1,14 @@
+return {
+    'vim-airline/vim-airline',
+    dependencies = {
+    'vim-airline/vim-airline-themes'
+    },
+    init = function ()
+        vim.g["airline#extensions#tabline#enabled"] = true
+        vim.g["airline#extensions#tabline#show_tab_nr"] = true
+        vim.g["airline#extensions#tabline#tab_nr_type"] = 2
+        vim.g["airline#extensions#tabline#show_tab_type"] = 1
+        vim.g["airline#extensions#tabline#formatter"] = 'unique_tail'
+        vim.g["airline_powerline_fonts"] = true
+    end
+}
