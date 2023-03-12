@@ -62,7 +62,6 @@ return {
     'RishabhRD/popfix',
     'RishabhRD/nvim-cheat.sh',
 
-    'frazrepo/vim-rainbow',
 
     'liuchengxu/vim-clap',
     'ryanoasis/vim-devicons',
@@ -95,8 +94,6 @@ return {
         branch = "v2.x",
     },
     'echasnovski/mini.nvim',
-    'gorbit99/codewindow.nvim',
-    -- minimap let's try it
     'ziontee113/neo-minimap',
 
     {
