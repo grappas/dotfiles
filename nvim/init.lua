@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
-
 require("config.presence")
 require("config.config")
 require("config.blankline")
@@ -22,7 +21,6 @@ require("config.cmp")
 require("config.nvim-lspconfig")
 require("config.mini")
 require("config.neo-minimap")
--- require("config.codewindow")
 require("config.print_r")
 require("config.telescope")
 require("config.kbd")
