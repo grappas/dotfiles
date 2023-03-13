@@ -1,2 +1,2 @@
-# Myvimrc
-My own set of vim config, plugins, and embedded lua script.
+# dotfiles
+Configs of mine
