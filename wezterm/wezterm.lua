@@ -3,14 +3,14 @@ local act = wezterm.action
 local mykeys = {
 }
 
-local My_font_size = 14.0
+local My_font_size = 12.0
 local Font_size = My_font_size
 
 function Recompute_font_size(window)
     local window_dims = window:get_dimensions()
     local overrides = window:get_config_overrides() or {}
     local Dpi = window_dims.dpi / 96
-    local Scale_factor = 100 * Dpi
+    local Scale_factor = 64 * Dpi
 
     if (window_dims.pixel_width / Scale_factor) > My_font_size
     then
