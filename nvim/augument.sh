@@ -25,7 +25,7 @@ else
     then
         rm ~/.config/nvim
     fi
-    ln -s "$PWD" .config
+    ln -s "$PWD" ~/.config
 fi
 
 

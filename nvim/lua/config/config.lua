@@ -1,24 +1,31 @@
+local options = {
+    termguicolors = true,
+    number = true,
+    autoindent = true,
+    ic = true,
+    wrap = true,
+    linebreak = true,
+    mouse = 'a',
+    showmatch = true,
+    title = true,
+    foldmethod = 'marker',
+    hlsearch = true,
+    incsearch = true,
+    relativenumber = true,
+    clipboard = 'unnamedplus',
+}
+
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
+
 vim.cmd([[
 let g:rainbow_active = 1
-set termguicolors
-set number
-set autoindent
-set ic
-set wrap
-set linebreak
-set mouse=a
-set showmatch
-set title
-set foldmethod=marker
 
 let g:gruvbox_italic=1
 
 colorscheme gruvbox
 
-set hlsearch
-set incsearch
-set clipboard=unnamedplus
-set relativenumber
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -60,19 +67,8 @@ set shortmess+=c
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-"##############################	AIRLINE	###################################
+"############################## AIRLINE ###################################
 "############################################################################
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#tab_nr_type= 2
-let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_powerline_fonts = 1
-
-" Vim Crosshairs
-set cursorline
-set cursorcolumn
 
 ]])
 

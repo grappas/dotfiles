@@ -3,6 +3,29 @@ local act = wezterm.action
 local mykeys = {
 }
 
+local My_font_size = 12.0
+local Font_size = My_font_size
+
+function Recompute_font_size(window)
+    local window_dims = window:get_dimensions()
+    local overrides = window:get_config_overrides() or {}
+    local Dpi = window_dims.dpi / 96
+    local Scale_factor = 64 * Dpi
+
+    if (window_dims.pixel_width / Scale_factor) > My_font_size
+    then
+        Font_size = My_font_size
+    else
+        Font_size = math.floor(window_dims.pixel_width / Scale_factor)
+    end
+    overrides.font_size = Font_size
+    window:set_config_overrides(overrides)
+end
+
+wezterm.on('window-resized', function(window)
+    Recompute_font_size(window)
+end)
+
 for i = 1, 8 do
     -- CTRL+ALT + number to activate that tab
     table.insert(mykeys, {
@@ -18,15 +41,15 @@ for i = 1, 8 do
 end
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    default_prog = { 'powershell.exe' }
+    Default_prog = { 'powershell.exe' }
 else
-    default_prog = { 'zsh' }
+    Default_prog = { 'zsh' }
 end
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    font = wezterm.font 'VictorMono NF'
+    Font = wezterm.font 'VictorMono NF'
 else
-    font = wezterm.font 'VictorMono Nerd Font'
+    Font = wezterm.font 'VictorMono Nerd Font'
 end
 
 
@@ -37,11 +60,12 @@ end
 -- end
 
 return {
-    font = font,
+    font = Font,
+    font_size = Font_size,
     color_scheme = 'Gruvbox Dark',
     window_background_opacity = 0.9,
-    default_prog = default_prog,
-    enable_wayland = false,
+    default_prog = Default_prog,
+    enable_wayland = true,
     -- enable_wayland = enable_wayland,
     keys = {
         {
