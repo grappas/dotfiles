@@ -1,6 +1,7 @@
 #!/bin/sh
+hyprctl dispatch dpms on
 kill -s TERM $(pidof gqrx)
-sleep 1
+
 gqrx &
 
 while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep "Crash Detected")" ] )
