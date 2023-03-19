@@ -35,5 +35,6 @@ wezterm start -- ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moj
 
 sleep 0.5
 
-hyprctl dispatch focuswindow gqrx-scanner && hyprctl dispatch movetoworkspacesilent 3
-hyprctl dispatch focuswindow Gqrx && hyprctl dispatch movetoworkspacesilent 3
+hyprctl dispatch focuswindow gqrx-scanner && sleep 0.2 && hyprctl dispatch movetoworkspacesilent 3
+sleep 0.2
+hyprctl dispatch focuswindow Gqrx && sleep 0.5 && hyprctl dispatch movetoworkspacesilent 3

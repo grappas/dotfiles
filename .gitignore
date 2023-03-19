@@ -1,4 +1,5 @@
 hypr/exec.sh
+hypr/autostart_list.txt
 nvim/sysinit.vim
 nvim/lua/keys
 test
