@@ -2,23 +2,27 @@
 hyprctl dispatch dpms on
 kill -s TERM $(pidof gqrx)
 
+sleep 1
+
 gqrx &
 
-while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep "Crash Detected")" ] )
+sleep 1
+
+while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ] )
 do
     sleep 1
 done
 
 sleep 0.3
 
-if [ -n "$(hyprctl clients | grep "Crash Detected")" ]
+if [ -n "$(hyprctl clients | grep 'Crash Detected!')" ]
 then
 hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 1 && ydotool mousemove -x -35 -y -50 && ydotool click 0xC0
 fi
 
 sleep 0.3
 
-while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep "Crash Detected")" ] )
+while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ] )
 do
     sleep 1
 done
