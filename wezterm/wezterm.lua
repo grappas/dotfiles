@@ -10,7 +10,7 @@ function Recompute_font_size(window)
     local window_dims = window:get_dimensions()
     local overrides = window:get_config_overrides() or {}
     local Dpi = window_dims.dpi / 96
-    local Scale_factor = 64 * Dpi
+    local Scale_factor = 90 * Dpi
 
     if (window_dims.pixel_width / Scale_factor) > My_font_size
     then
@@ -62,7 +62,7 @@ end
 return {
     font = Font,
     font_size = Font_size,
-    color_scheme = 'Gruvbox Dark',
+    color_scheme = 'GruvboxDark',
     window_background_opacity = 0.9,
     default_prog = Default_prog,
     enable_wayland = true,
