@@ -10,13 +10,16 @@ function Recompute_font_size(window)
     local window_dims = window:get_dimensions()
     local overrides = window:get_config_overrides() or {}
     local Dpi = window_dims.dpi / 96
-    local Scale_factor = 90 * Dpi
 
-    if (window_dims.pixel_width / Scale_factor) > My_font_size
+    local Scale_factor_general = 10
+    local Scale_factor_x = Scale_factor_general * 9 * Dpi
+    local Scale_factor_y = Scale_factor_general * 9 * Dpi
+
+    if ((( window_dims.pixel_width / Scale_factor_x ) + ( window_dims.pixel_height / Scale_factor_y ))/2) > My_font_size
     then
         Font_size = My_font_size
     else
-        Font_size = math.floor(window_dims.pixel_width / Scale_factor)
+        Font_size = math.floor((( window_dims.pixel_width / Scale_factor_x ) + ( window_dims.pixel_height / Scale_factor_y ))/2)
     end
     overrides.font_size = Font_size
     window:set_config_overrides(overrides)
@@ -66,6 +69,7 @@ return {
     window_background_opacity = 0.9,
     default_prog = Default_prog,
     enable_wayland = true,
+    hide_tab_bar_if_only_one_tab = true,
     -- enable_wayland = enable_wayland,
     keys = {
         {
