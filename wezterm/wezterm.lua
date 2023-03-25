@@ -3,7 +3,7 @@ local act = wezterm.action
 local mykeys = {
 }
 
-local My_font_size = 12.0
+local My_font_size = 16.0
 local Font_size = My_font_size
 
 function Recompute_font_size(window)
