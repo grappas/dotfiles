@@ -4,6 +4,10 @@ kill -s TERM $(pidof gqrx)
 
 sleep 1
 
+WORKSPACE_CACHE=$( hyprctl activewindow | grep workspace | sed 's/^.*workspace:\ //g' | sed 's/\ (*.*)//g' )
+
+hyprctl dispatch workspace 3
+
 gqrx &
 
 sleep 1
@@ -28,13 +32,11 @@ do
 done
 
 sleep 0.3
+
 hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0
 
-sleep 0.3
-hyprctl dispatch focuswindow gqrx-scanner && sleep 0.5 && hyprctl dispatch movetoworkspacesilent 3
-
-sleep 0.5
 wezterm start -- ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moje" -q a3.0 -x 150&
 
 sleep 0.5
-hyprctl dispatch focuswindow Gqrx && sleep 0.5 && hyprctl dispatch movetoworkspacesilent 3
+
+hyprctl dispatch workspace "$WORKSPACE_CACHE"

@@ -3,23 +3,30 @@ local act = wezterm.action
 local mykeys = {
 }
 
-local My_font_size = 16.0
+local My_font_size = 14.0
 local Font_size = My_font_size
 
 function Recompute_font_size(window)
     local window_dims = window:get_dimensions()
     local overrides = window:get_config_overrides() or {}
     local Dpi = window_dims.dpi / 96
+    local Scale_factor_general = 7
+    local Scale_factor_x = window_dims.pixel_width / ( Scale_factor_general * 9 * Dpi )
+    local Scale_factor_y = window_dims.pixel_height / ( Scale_factor_general * 9 * Dpi )
+    local Scale_factor = Scale_factor_x
 
-    local Scale_factor_general = 10
-    local Scale_factor_x = Scale_factor_general * 9 * Dpi
-    local Scale_factor_y = Scale_factor_general * 9 * Dpi
+    if (Scale_factor_y > Scale_factor_x)
+    then
+        Scale_factor = Scale_factor_x
+    else
+        Scale_factor = Scale_factor_y
+    end
 
-    if ((( window_dims.pixel_width / Scale_factor_x ) + ( window_dims.pixel_height / Scale_factor_y ))/2) > My_font_size
+    if Scale_factor > My_font_size
     then
         Font_size = My_font_size
     else
-        Font_size = math.floor((( window_dims.pixel_width / Scale_factor_x ) + ( window_dims.pixel_height / Scale_factor_y ))/2)
+        Font_size = math.floor(Scale_factor)
     end
     overrides.font_size = Font_size
     window:set_config_overrides(overrides)
@@ -67,6 +74,7 @@ return {
     font_size = Font_size,
     color_scheme = 'GruvboxDark',
     window_background_opacity = 0.9,
+    window_close_confirmation = 'NeverPrompt',
     default_prog = Default_prog,
     enable_wayland = true,
     hide_tab_bar_if_only_one_tab = true,
