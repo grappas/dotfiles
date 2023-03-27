@@ -1,4 +1,9 @@
 #!/bin/sh
+
+sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe2
+sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3
+sh ~/skrypty/sftp_mount.sh jakub 192.168.0.150 /home/jakub
+
 hyprctl dispatch dpms on
 kill -s TERM $(pidof gqrx)
 
@@ -21,7 +26,7 @@ sleep 0.3
 
 if [ -n "$(hyprctl clients | grep 'Crash Detected!')" ]
 then
-hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 1 && ydotool mousemove -x -35 -y -50 && ydotool click 0xC0
+    hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 1 && ydotool mousemove -x -35 -y -50 && ydotool click 0xC0
 fi
 
 sleep 0.3
@@ -34,6 +39,8 @@ done
 sleep 0.3
 
 hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0
+
+sleep 0.5
 
 wezterm start -- ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moje" -q a3.0 -x 150&
 
