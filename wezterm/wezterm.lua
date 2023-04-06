@@ -12,7 +12,7 @@ function Recompute_font_size(window)
     local Dpi = window_dims.dpi / 96
     local Scale_factor_general = 7
     local Scale_factor_x = window_dims.pixel_width / ( Scale_factor_general * 9 * Dpi )
-    local Scale_factor_y = window_dims.pixel_height / ( Scale_factor_general * 9 * Dpi )
+    local Scale_factor_y = window_dims.pixel_height / ( Scale_factor_general * 7 * Dpi )
     local Scale_factor = Scale_factor_x
 
     if (Scale_factor_y > Scale_factor_x)
@@ -80,6 +80,7 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     -- enable_wayland = enable_wayland,
     keys = {
+        -- {{{1
         {
             key = 'F1',
             mods = 'CMD',
@@ -140,5 +141,6 @@ return {
             mods = 'CMD',
             action = wezterm.action.DisableDefaultAssignment,
         },
+        -- }}}
     }
 }

@@ -8,11 +8,6 @@ return {
     --use({'simrat39/rust-tools.nvim'})
 
     -- fzf-lua
-    {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
-    },
-
     -- transition
     't9md/vim-choosewin',
     'lukas-reineke/indent-blankline.nvim',

@@ -124,6 +124,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim='nvim'
 alias cp="rsync -avz"
 alias yay="paru --skipreview --bottomup"
+alias gscope="gamemoderun gamescope -W 1920 -H 1080 -f -U --adaptive-sync -e --fsr-sharpness 20 --expose-wayland --rt"
 
 export HISTCONTROL=erasedups:ignorespace
 export HISTIGNORE='history*:ls*'

@@ -10,6 +10,8 @@ command Bdd :b# | bw!# | bn | bp
 map <C-n> :NeoTreeFocusToggle<CR>
 
 " FZF
+map gtt :Telescope<CR>
+map <C-b> :Telescope buffers<CR>
 map <C-p> :Telescope find_files<CR>
 map <C-f> :Telescope live_grep<CR>
 nnoremap <leader>pp :Telescope registers<CR>
