@@ -1,41 +1,90 @@
 (
- defwidget today_is []
- (box :class "today_is"
-  :orientation "v"
-  :space-evenly true
-  :valign "start"
-  :spacing 2
-  time
-  date
- )
+    defwidget today_is []
+(box :class "today_is"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :spacing 2
+        time
+        date
+    )
+)
+
+(defwidget cpu_monitor []
+(
+        box
+        :class "cpu_monitor"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :halign "start"
+        :spacing "2"
+        cpu_overall_usage_percent
+        cpu_overall_usage_sensors_1
+        cpu_overall_usage_sensors_2
+    ))
+
+(
+    defwidget lets_gather_it_all []
+(
+        box
+        :class "cpu_monitor"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        :spacing "5"
+    ( today_is )
+    ( cpu_monitor )
+    )
 )
 
     (defwindow monitor1
-     :monitor 0
-     :stacking "fg"
-     :exclusive true
-     :wm-ignore false
-     :geometry (geometry :x "0%"
-         :y "0%"
-         :width "160px"
-         :height "100%"
-         :anchor "right center")
-     (today_is))
+    :monitor 0
+    :stacking "fg"
+    :exclusive true
+    :wm-ignore false
+    :geometry (geometry :x "0%"
+        :y "0%"
+        :width "160px"
+        :height "100%"
+        :anchor "right center")
+(lets_gather_it_all))
 
     (defwindow monitor2
-     :monitor 1
-     :stacking "fg"
-     :exclusive true
-     :wm-ignore false
-     :geometry (geometry :x "0%"
-         :y "0%"
-         :width "160px"
-         :height "100%"
-         :anchor "left center")
-     (today_is))
+    :monitor 1
+    :stacking "fg"
+    :exclusive true
+    :wm-ignore false
+    :geometry (geometry :x "0%"
+        :y "0%"
+        :width "160px"
+        :height "100%"
+        :anchor "left center")
+(lets_gather_it_all))
 
-    (defpoll time :interval "1s"
-     "date '+%H:%M:%S'")
+(
+    defpoll time :interval "1s"
+    "date '+%H:%M:%S'"
+)
 
-    (defpoll date :interval "10s"
-     "date '+%a, %d %B %Y'")
+(
+    defpoll date :interval "1m"
+    "date '+%a, %d %B %Y'"
+)
+
+(
+    defpoll cpu_overall_usage_percent
+    :interval "1s"
+    "sh ~/.config/eww/scripts/eww/cpu_usage_overall.sh"
+)
+(
+    defpoll cpu_overall_usage_sensors_1
+    :interval "1s"
+    "sh ~/.config/eww/scripts/eww/cpu_usage_sensors_1.sh"
+)
+(
+    defpoll cpu_overall_usage_sensors_2
+    :interval "1s"
+    "sh ~/.config/eww/scripts/eww/cpu_usage_sensors_2.sh"
+)
