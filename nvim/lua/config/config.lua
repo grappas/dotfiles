@@ -13,6 +13,7 @@ local options = {
     incsearch = true,
     relativenumber = true,
     clipboard = 'unnamedplus',
+    statuscolumn = '%l %r',
 }
 
 for k, v in pairs(options) do
