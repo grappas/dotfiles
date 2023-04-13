@@ -10,18 +10,47 @@
     )
 )
 
-(defwidget cpu_monitor []
+(defwidget cpu_monitor_overall_usage []
+(
+        box
+        :class "cpu_monitor"
+        :orientation "h"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        :spacing "1"
+        cpu_overall_usage_percent
+    ))
+(defwidget cpu_monitor_overall_usage_sensors_1 []
+(
+        box
+        :class "cpu_monitor"
+        :orientation "h"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        :spacing "1"
+        cpu_overall_usage_sensors_1
+    ))
+(defwidget cpu_monitor_overall_usage_sensors_2 []
+(
+        box
+        :class "cpu_monitor"
+        :orientation "h"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        cpu_overall_usage_sensors_2
+    ))
+(defwidget cpu_monitor_per_core_usage []
 (
         box
         :class "cpu_monitor"
         :orientation "v"
         :space-evenly true
         :valign "start"
-        :halign "start"
-        :spacing "2"
-        cpu_overall_usage_percent
-        cpu_overall_usage_sensors_1
-        cpu_overall_usage_sensors_2
+        :halign "middle"
+        cpu_per_core_usage
     ))
 
 (
@@ -30,12 +59,15 @@
         box
         :class "cpu_monitor"
         :orientation "v"
-        :space-evenly true
+        :space-evenly false
         :valign "start"
         :halign "middle"
         :spacing "5"
     ( today_is )
-    ( cpu_monitor )
+    ( cpu_monitor_overall_usage )
+    ( cpu_monitor_overall_usage_sensors_1 )
+    ( cpu_monitor_overall_usage_sensors_2 )
+    ( cpu_monitor_per_core_usage )
     )
 )
 
@@ -87,4 +119,9 @@
     defpoll cpu_overall_usage_sensors_2
     :interval "1s"
     "sh ~/.config/eww/scripts/eww/cpu_usage_sensors_2.sh"
+)
+(
+    defpoll cpu_per_core_usage
+    :interval "1s"
+    "sh ~/.config/eww/scripts/eww/cpu_usage_per_core.sh"
 )
