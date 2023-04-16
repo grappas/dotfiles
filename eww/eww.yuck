@@ -1,14 +1,26 @@
+(defwidget time []
 (
-    defwidget today_is []
-(box :class "today_is"
-        :orientation "v"
+        box
+        :class "time"
+        :orientation "h"
         :space-evenly true
         :valign "start"
-        :spacing 2
+        :halign "middle"
+        :spacing "0"
         time
+    ))
+
+(defwidget date []
+(
+        box
+        :class "date"
+        :orientation "h"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        :spacing "0"
         date
-    )
-)
+    ))
 
 (defwidget cpu_monitor_overall_usage []
 (
@@ -53,6 +65,37 @@
         cpu_per_core_usage
     ))
 
+(defwidget cpu_top []
+(
+        box
+        :class "top"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :halign "middle"
+        cpu_top
+    ))
+(defwidget mem_top []
+(
+        box
+        :class "vtop"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :halign "right"
+        mem_top
+    ))
+(defwidget mem_bar []
+(
+        box
+        :class "mem_bar"
+        :orientation "v"
+        :space-evenly true
+        :valign "start"
+        :halign "right"
+        mem_bar
+    ))
+
 (
     defwidget lets_gather_it_all []
 (
@@ -63,11 +106,15 @@
         :valign "start"
         :halign "middle"
         :spacing "5"
-    ( today_is )
+    (time)
+    (date)
     ( cpu_monitor_overall_usage )
     ( cpu_monitor_overall_usage_sensors_1 )
     ( cpu_monitor_overall_usage_sensors_2 )
     ( cpu_monitor_per_core_usage )
+    ( cpu_top )
+    ( mem_bar )
+    ( mem_top )
     )
 )
 
@@ -108,20 +155,35 @@
 (
     defpoll cpu_overall_usage_percent
     :interval "1s"
-    "sh ~/.config/eww/scripts/eww/cpu_usage_overall.sh"
+    "sh ~/.config/eww/scripts/cpu_usage_overall.sh"
 )
 (
     defpoll cpu_overall_usage_sensors_1
     :interval "1s"
-    "sh ~/.config/eww/scripts/eww/cpu_usage_sensors_1.sh"
+    "sh ~/.config/eww/scripts/cpu_usage_sensors_1.sh"
 )
 (
     defpoll cpu_overall_usage_sensors_2
     :interval "1s"
-    "sh ~/.config/eww/scripts/eww/cpu_usage_sensors_2.sh"
+    "sh ~/.config/eww/scripts/cpu_usage_sensors_2.sh"
 )
 (
     defpoll cpu_per_core_usage
     :interval "1s"
-    "sh ~/.config/eww/scripts/eww/cpu_usage_per_core.sh"
+    "sh ~/.config/eww/scripts/cpu_usage_per_core.sh"
+)
+(
+    defpoll cpu_top
+    :interval "1s"
+    "sh ~/.config/eww/scripts/cpu_top.sh"
+)
+(
+    defpoll mem_top
+    :interval "1s"
+    "sh ~/.config/eww/scripts/mem_top.sh"
+)
+(
+    defpoll mem_bar
+    :interval "1s"
+    "sh ~/.config/eww/scripts/mem_bar.sh"
 )

@@ -1,6 +1,11 @@
 #!/bin/sh
 #
+if [ ! -d ~/temp/eww ]
+then
+    mkdir -p ~/temp/eww
+fi
+
 while (true)
 do
-    sh ~/skrypty/eww/collect_sensors.sh
+    sh ~/.config/eww/scripts/collect_sensors.sh
 done

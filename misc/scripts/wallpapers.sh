@@ -12,12 +12,14 @@ do
         hyprctl hyprpaper preload "~/Obrazy/Wallpapers/$each"
         sleep 1
         hyprctl hyprpaper wallpaper "$2,~/Obrazy/Wallpapers/$each"
+        sleep 1
+        hyprctl hyprpaper unload "~/Obrazy/Wallpapers/$each"
     else
         hyprctl hyprpaper preload "~/Obrazy/Wallpapers/$each"
         sleep 1
         hyprctl hyprpaper wallpaper "$3,~/Obrazy/Wallpapers/$each"
         sleep $1
-        hyprctl hyprpaper unload all
+        hyprctl hyprpaper unload "~/Obrazy/Wallpapers/$each"
     fi
 
     LOOP_COUNT=$((LOOP_COUNT+1))
