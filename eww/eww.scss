@@ -2,17 +2,38 @@
 	all: unset;
 	font-family: "Victor Mono Nerd Font";
 	color: #FFECC0;
-    background: #292929
+    background: #292929;
+    border-radius: 25px;
+
 }
 .time {
 	font-family: "Victor Mono Nerd Font";
     font-size: 48;
-	color: #FFECC0;
     background: #292929
 }
 .date {
 	font-family: "Victor Mono Nerd Font";
     font-size: 16;
-	color: #FFECC0;
+    background: #292929
+}
+.cpu_sensors {
+	font-family: "Victor Mono Nerd Font";
+    font-size: 13;
+    background: #292929
+}
+.gpu_sensors {
+	font-family: "Victor Mono Nerd Font";
+    font-size: 13;
+    background: #292929
+}
+.mem_bar {
+	font-family: "Victor Mono Nerd Font";
+    font-size: 12;
+    background: #292929
+}
+.separator {
+	font-family: "Victor Mono Nerd Font";
+    font-size: 12;
+	color: #B8BB26;
     background: #292929
 }
