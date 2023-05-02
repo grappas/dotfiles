@@ -145,7 +145,7 @@
     defwidget lets_gather_it_all []
 (
         box
-        :class "cpu_monitor"
+        :class "whole"
         :orientation "v"
         :space-evenly false
         :valign "start"

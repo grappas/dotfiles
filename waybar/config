@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["custom/playerctl"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "custom/dupa", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
     // Modules configuration
 	"clock": {
 		"format": "<big>{:%T\n%d.%m.%y\n%A}</big>",

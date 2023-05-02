@@ -1,15 +1,23 @@
-*{
+.whole{
 	all: unset;
 	font-family: "Victor Mono Nerd Font";
 	color: #FFECC0;
     background: #292929;
     border-radius: 25px;
-
+    border: solid 1px #FFECC0;
+    padding: 10px 10px;
+}
+*{
+	all: unset;
+	font-family: "Victor Mono Nerd Font";
+	color: #FFECC0;
+    background: transparent;
 }
 .time {
 	font-family: "Victor Mono Nerd Font";
     font-size: 48;
-    background: #292929
+    background: #292929;
+    border: solid 0px #FFECC0;
 }
 .date {
 	font-family: "Victor Mono Nerd Font";

@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces {
-	background-color: black;
+	background-color: #292929;
 	margin: 10px 10px 0px 10px;
 	border-radius: 16px;
   border: solid 1px #EBDBB2;
@@ -25,19 +25,19 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: black;
+    color: #292929;
     background-color: #EBDBB2;
     border-radius: 16px;
 }
 
 #workspaces button:hover {
 	background-color: #B8BB26;
-	color: black;
+	color: #292929;
 	border-radius: 16px;
 }
 
 #custom-date, #clock, #custom-dupa, #battery, #pulseaudio, #network, #custom-randwall {
-	background-color: black;
+	background-color: #292929;
 	padding: 5px 7px;
 	margin: 10px 5px 0px 5px;
   border-radius: 16px;
@@ -60,7 +60,7 @@ window#waybar {
 }
 
 #tray {
-    background-color: #000000;
+    background-color: #292929;
     margin: 10px 10px 0px -5px;
     border-radius: 16px;
     padding: 0px 7px;
@@ -121,7 +121,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-    background-color: black;
+    background-color: #292929;
     color: #928374;
     border-radius: 16px;
     margin-left: 0px;
@@ -134,7 +134,7 @@ window#waybar {
 }
 
 #custom-playerctl {
-	background-color: black;
+	background-color: #292929;
 	padding-left: 10px;
   padding-right: 10px;
 	border-radius: 16px;
