@@ -174,7 +174,7 @@
     :stacking "fg"
     :exclusive true
     :wm-ignore false
-    :geometry (geometry :x "0%"
+    :geometry (geometry :x "8px"
         :y "0%"
         :width "160px"
         :height "55%"
@@ -186,7 +186,7 @@
     :stacking "fg"
     :exclusive true
     :wm-ignore false
-    :geometry (geometry :x "0%"
+    :geometry (geometry :x "8px"
         :y "0%"
         :width "160px"
         :height "55%"
