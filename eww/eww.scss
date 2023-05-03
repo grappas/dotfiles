@@ -16,6 +16,7 @@
 .time {
 	font-family: "Victor Mono Nerd Font";
 	font-weight: bold;
+	font-style: italic;
     font-size: 48;
     background: #292929;
     border: solid 0px #FFECC0;
@@ -23,16 +24,21 @@
 .date {
 	font-family: "Victor Mono Nerd Font";
 	font-weight: bold;
+	font-style: italic;
     font-size: 16;
     background: #292929
 }
 .cpu_sensors {
 	font-family: "Victor Mono Nerd Font";
+	font-weight: bold;
+	font-style: italic;
     font-size: 13;
     background: #292929
 }
 .gpu_sensors {
 	font-family: "Victor Mono Nerd Font";
+	font-weight: bold;
+	font-style: italic;
     font-size: 13;
     background: #292929
 }

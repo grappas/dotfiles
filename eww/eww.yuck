@@ -18,7 +18,7 @@
         :valign "start"
         :halign "middle"
         :spacing "0"
-        "◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍◍"
+        "▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦"
     ))
 
 (defwidget date []
