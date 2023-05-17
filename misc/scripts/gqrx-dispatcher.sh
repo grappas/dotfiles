@@ -3,6 +3,7 @@
 sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe2
 sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3
 sh ~/skrypty/sftp_mount.sh jakub 192.168.0.150 /home/jakub
+sh ~/skrypty/sftp_mount.sh jakub 192.168.0.151 /home/jakub
 
 kill -s TERM $(pidof gqrx)
 
