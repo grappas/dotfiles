@@ -20,8 +20,6 @@ return {
     'RishabhRD/popfix',
     'RishabhRD/nvim-cheat.sh',
 
-
-    'liuchengxu/vim-clap',
     'ryanoasis/vim-devicons',
     --use { 'preservim/nerdcommenter' }
     {
