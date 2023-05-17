@@ -139,4 +139,4 @@ require("mason-nvim-dap").setup({
     ensure_installed = { "cpptools" },
     automatic_setup = true,
 })
-require 'mason-nvim-dap'.setup_handlers {}
+
