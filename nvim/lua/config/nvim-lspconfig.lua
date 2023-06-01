@@ -136,7 +136,10 @@ require("neodev").setup({
     library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 require("mason-nvim-dap").setup({
-    ensure_installed = { "cpptools" },
-    automatic_setup = true,
+    handlers = {
+        function (config)
+            require('mason-nvim-dap').default_setup(config)
+        end
+    }
 })
 
