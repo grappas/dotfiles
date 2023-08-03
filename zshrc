@@ -123,11 +123,23 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias vim='nvim'
 alias cp="rsync -avz"
-alias yay="paru --skipreview --bottomup"
+# alias yay="paru --skipreview --bottomup"
 alias gscope="gamemoderun gamescope -W 1920 -H 1080 -f -U --adaptive-sync -e --fsr-sharpness 20 --expose-wayland --rt"
 
 export HISTCONTROL=erasedups:ignorespace
 export HISTIGNORE='history*:ls*'
+
+__edit_without_executing() {
+    local editor="${EDITOR:-nano}"
+    local tmpf="$(mktemp)"
+    printf '%s\n' "$READLINE_LINE" >| "$tmpf"
+    "$editor" "$tmpf"
+    READLINE_LINE="$(<"$tmpf")"
+    READLINE_POINT="${#READLINE_LINE}"
+    rm -f "$tmpf" >/dev/null 2>&1
+}
+
+# bindkey nvim   -x '"\C-x\C-e":__edit_without_executing'
 
 if [ -f ~/.myzshrc ]
 then

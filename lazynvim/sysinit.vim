@@ -1,0 +1,1 @@
+/home/grappas/instalancje/dotfiles/lazynvim/init.vim
