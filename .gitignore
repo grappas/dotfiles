@@ -5,3 +5,4 @@ nvim/sysinit.vim
 nvim/lua/keys
 test
 nvim/lazy-lock.json
+lazynvim/lazy-lock.json
