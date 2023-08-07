@@ -45,10 +45,10 @@ cat ~/temp/eww/sensors.json | jq --arg ZENPOWER "$ZENPOWER" '.[$ARGS.named.ZENPO
 cat ~/temp/eww/sensors.json | jq --arg AMDGPU "$AMDGPU" '.[$ARGS.named.AMDGPU] | .edge | .temp1_input' > ~/temp/eww/sensors.amdgpu.temp
 cat ~/temp/eww/sensors.json | jq --arg AMDGPU "$AMDGPU" '.[$ARGS.named.AMDGPU] | .vddgfx | .in0_input' > ~/temp/eww/sensors.amdgpu.vdd
 
-echo "$(cat /sys/class/drm/card0/device/mem_info_gtt_used)/1024/1024" | bc > ~/temp/eww/gpu.gtt.used
-echo "$(cat /sys/class/drm/card0/device/mem_info_gtt_total)/1024/1024" | bc > ~/temp/eww/gpu.gtt.total
-echo "$(cat /sys/class/drm/card0/device/mem_info_vram_used)/1024/1024" | bc > ~/temp/eww/gpu.vram.used
-echo "$(cat /sys/class/drm/card0/device/mem_info_vram_total)/1024/1024" | bc > ~/temp/eww/gpu.vram.total
+echo "$(cat /sys/class/drm/card1/device/mem_info_gtt_used)/1024/1024" | bc > ~/temp/eww/gpu.gtt.used
+echo "$(cat /sys/class/drm/card1/device/mem_info_gtt_total)/1024/1024" | bc > ~/temp/eww/gpu.gtt.total
+echo "$(cat /sys/class/drm/card1/device/mem_info_vram_used)/1024/1024" | bc > ~/temp/eww/gpu.vram.used
+echo "$(cat /sys/class/drm/card1/device/mem_info_vram_total)/1024/1024" | bc > ~/temp/eww/gpu.vram.total
 sh ~/.config/eww/scripts/gpu_percentage_polling.sh&
 
 BLACHA=0

@@ -78,7 +78,6 @@ inoremap ? ?<c-g>u
 
 tnoremap <Esc> <C-\><C-n>
 command Terminal :below 7split | terminal
-command DAPUI :lua require("dapui").toggle()
 
 "switch buffers
 nnoremap <C-h> :bprev<CR>

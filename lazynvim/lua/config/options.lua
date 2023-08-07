@@ -11,9 +11,9 @@ local options = {
   foldmethod = "marker",
   hlsearch = true,
   incsearch = true,
-  relativenumber = true,
+  -- relativenumber = true,
   clipboard = "unnamedplus",
-  statuscolumn = "%l %r",
+  -- statuscolumn = "%l %r",
 }
 
 for k, v in pairs(options) do

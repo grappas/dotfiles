@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
 vim.cmd([[
 " fast cargo call
 command CRun :w | !cargo run
@@ -13,8 +14,8 @@ map <C-n> :Neotree toggle<CR>
 " FZF
 map gtt :Telescope<CR>
 map <C-b> :Telescope buffers<CR>
-map <C-p> :Telescope find_files<CR>
-map <C-f> :Telescope live_grep<CR>
+map <C-p> :Telescope find_files hidden=true no_ignore=true<CR>
+map <C-f> :Telescope live_grep hidden=true no_ignore=true<CR>
 nnoremap <leader>pp :Telescope registers<CR>
 map <C-t> :e <cfile><cr>
 
@@ -77,7 +78,6 @@ inoremap ? ?<c-g>u
 
 tnoremap <Esc> <C-\><C-n>
 command Terminal :below 7split | terminal
-command DAPUI :lua require("dapui").toggle()
 
 "switch buffers
 nnoremap <C-h> :bprev<CR>
