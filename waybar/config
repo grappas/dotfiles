@@ -2,7 +2,7 @@
     "position": "top",
     "layer": "top",
     "height": 24,
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/playerctl"],
     "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
     // Modules configuration
@@ -18,7 +18,7 @@
     },
 
 
-	"wlr/workspaces": {
+	"hyprland/workspaces": {
         "disable-scroll": false,
         "on-scroll-up": "hyprctl dispatch workspace -2",
         "on-scroll-down": "hyprctl dispatch workspace +2",
