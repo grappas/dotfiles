@@ -138,10 +138,11 @@ __edit_without_executing() {
     READLINE_POINT="${#READLINE_LINE}"
     rm -f "$tmpf" >/dev/null 2>&1
 }
-
+nvim --headless '+Lazy! sync' +qa&
 # bindkey nvim   -x '"\C-x\C-e":__edit_without_executing'
 
 if [ -f ~/.myzshrc ]
 then
     source ~/.myzshrc
 fi
+

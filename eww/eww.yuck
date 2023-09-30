@@ -171,9 +171,9 @@
 
     (defwindow monitor1
     :monitor 0
-    :stacking "fg"
+    :stacking "bottom"
     :exclusive true
-    :wm-ignore false
+    :focusable false
     :geometry (geometry :x "8px"
         :y "0%"
         :width "160px"
@@ -183,9 +183,9 @@
 
     (defwindow monitor2
     :monitor 1
-    :stacking "fg"
+    :stacking "bottom"
     :exclusive true
-    :wm-ignore false
+    :focusable false
     :geometry (geometry :x "8px"
         :y "0%"
         :width "160px"
