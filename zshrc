@@ -123,6 +123,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias vim='nvim'
 alias cp="rsync -avz"
+alias x='xdg-open "`fzf`"'
 # alias yay="paru --skipreview --bottomup"
 alias gscope="gamemoderun gamescope -W 1920 -H 1080 -f -U --adaptive-sync -e --fsr-sharpness 20 --expose-wayland --rt"
 
