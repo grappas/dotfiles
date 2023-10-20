@@ -9,4 +9,5 @@ lazynvim/lazy-lock.json
 lazynvim/lazyvim.json
 tmux/plugins
 tmux/plugins/*
+lazynvim/sysinit.vim
 
