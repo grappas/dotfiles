@@ -83,6 +83,8 @@ command Terminal :below 7split | terminal
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-j> :bnext<CR>
 
+imap <script><silent><nowait><expr> <Tab><Tab><Tab> codeium#Accept()
+
 "toggle comment
 "nnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 "vnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
