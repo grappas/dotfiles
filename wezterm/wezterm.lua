@@ -63,13 +63,6 @@ else
 end
 
 
--- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
---     enable_wayland = false
--- else
---     enable_wayland = true
--- end
-
-
 return {
     font = Font,
     font_size = Font_size,
@@ -81,7 +74,8 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     default_cursor_style = 'SteadyBlock',
 
-    -- enable_wayland = enable_wayland,
+    front_end = "WebGpu",
+
     keys = {
         -- {{{1
         {
