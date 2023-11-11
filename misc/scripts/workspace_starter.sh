@@ -18,4 +18,4 @@ done
 
 sleep 1
 
-sh $(dirname $0)/gqrx-watchdog.sh
+sh $(dirname $0)/gqrx-watchdog.sh&
