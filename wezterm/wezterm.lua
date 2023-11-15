@@ -74,7 +74,7 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     default_cursor_style = 'SteadyBlock',
 
-    front_end = "WebGpu",
+    front_end = "OpenGL",
 
     keys = {
         -- {{{1
