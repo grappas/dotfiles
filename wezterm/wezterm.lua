@@ -59,7 +59,7 @@ end
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     Font = wezterm.font 'VictorMono NF'
 else
-    Font = wezterm.font 'VictorMono Nerd Font'
+    Font = wezterm.font 'VictorMono NF'
 end
 
 
@@ -73,8 +73,8 @@ return {
     enable_wayland = true,
     hide_tab_bar_if_only_one_tab = true,
     default_cursor_style = 'SteadyBlock',
-
-    front_end = "OpenGL",
+    scrollback_lines = 184467440,
+    front_end = "WebGpu",
 
     keys = {
         -- {{{1

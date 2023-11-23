@@ -42,7 +42,7 @@ hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && yd
 
 sleep 0.5
 
-wezterm start -- ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moje" -q a3.0 -x 150&
+foot ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moje" -q a3.0 -x 150&
 
 sleep 0.5
 

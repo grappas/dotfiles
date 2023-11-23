@@ -36,6 +36,12 @@ return {
         type = "executable",
         command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7",
       }
+      dap.adapters.c = {
+        id = "cppdbg",
+        name = "cppdbg",
+        type = "executable",
+        command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7",
+      }
       local continue = function()
         if vim.fn.filereadable(".vscode/launch.json") then
           require("dap.ext.vscode").load_launchjs(".vscode/launch.json")
