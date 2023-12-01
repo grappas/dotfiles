@@ -9,15 +9,11 @@ command Bd :b# | bw# | bn | bp
 command Bdw :w | b# | bw# | bn | bp
 command Bdd :b# | bw!# | bn | bp
 
-map <C-n> :Neotree toggle<CR>
-
 " FZF
 map gtt :Telescope<CR>
-map <C-b> :Telescope buffers<CR>
 map <C-p> :Telescope find_files hidden=true no_ignore=true<CR>
 map <C-f> :Telescope live_grep hidden=true no_ignore=true<CR>
 nnoremap <leader>pp :Telescope registers<CR>
-map <C-t> :e <cfile><cr>
 
 " a co to?
 map <S-Tab> :bn<CR>
@@ -82,8 +78,6 @@ command Terminal :below 7split | terminal
 "switch buffers
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-j> :bnext<CR>
-
-imap <script><silent><nowait><expr> <Tab><Tab><Tab> codeium#Accept()
 
 "toggle comment
 "nnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>

@@ -70,7 +70,7 @@ return {
     window_background_opacity = 0.9,
     window_close_confirmation = 'NeverPrompt',
     default_prog = Default_prog,
-    enable_wayland = true,
+    enable_wayland = false,
     hide_tab_bar_if_only_one_tab = true,
     default_cursor_style = 'SteadyBlock',
     scrollback_lines = 184467440,

@@ -5,9 +5,9 @@ return {
     config = function() end,
     opts = {
       extensions = {
-        -- inlay_hints = {
-        --   inline = true,
-        -- },
+        inlay_hints = {
+          inline = true,
+        },
         ast = {
           --These require codicons (https://github.com/microsoft/vscode-codicons)
           role_icons = {
