@@ -84,3 +84,5 @@ nnoremap <C-j> :bnext<CR>
 "vnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 "inoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 ]])
+
+
