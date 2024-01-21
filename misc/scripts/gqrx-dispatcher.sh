@@ -5,21 +5,16 @@ sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3&
 sh ~/skrypty/sftp_mount.sh jakub 192.168.0.150 /home/jakub&
 sh ~/skrypty/sftp_mount.sh jakub 192.168.0.151 /home/jakub&
 
-kill -s TERM $(pidof gqrx)
-
-sleep 1
-
 WORKSPACE_CACHE=$( hyprctl activewindow | grep workspace | sed 's/^.*workspace:\ //g' | sed 's/\ (*.*)//g' )
 
-hyprctl dispatch workspace 3
+# kill -s TERM $(pidof gqrx)
+hyprctl dispatcher workspace 3; hyprctl dispatcher focuswindow gqrx && hyprctl dispatcher killactive
 
 gqrx &
 
-sleep 1
-
 while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ] )
 do
-    sleep 1
+    sleep 0.3
 done
 
 sleep 0.3
@@ -33,16 +28,16 @@ sleep 0.3
 
 while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ] )
 do
-    sleep 1
+    sleep 0.3
 done
 
-sleep 0.3
+sleep 1
 
 hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0
 
 sleep 0.5
 
-foot ~/instalancje/gqrx-scanner/bin/gqrx-scanner -m bookmark -t "Moje" -q a3.0 -x 150&
+foot ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50&
 
 sleep 0.5
 
