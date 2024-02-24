@@ -7,6 +7,8 @@ return {
     servers = {
       -- Ensure mason installs the server
       clangd = {
+        mason = false,
+        filetypes = { "h", "c", "cpp", "hpp", "cc", "objc", "objcpp" },
         keys = {
           { "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
         },

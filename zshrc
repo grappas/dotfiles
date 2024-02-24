@@ -81,6 +81,7 @@ plugins=(
     fzf
 	sudo
 	git
+    thefuck
 	autojump
 	zsh-syntax-highlighting
 	zsh-autosuggestions

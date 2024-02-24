@@ -17,7 +17,7 @@ local options = {
     -- statuscolumn = "%l %r",
 }
 
-vim.g.autoformat = false
+vim.g.autoformat = true
 
 for k, v in pairs(options) do
     vim.opt[k] = v

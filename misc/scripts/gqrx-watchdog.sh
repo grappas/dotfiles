@@ -4,7 +4,6 @@ while [ true ]
 do
     while [ ! -f ~/temp/wakeup ]
     do
-        echo "No file."
         sleep 1
     done
     echo "DONE!!!"
