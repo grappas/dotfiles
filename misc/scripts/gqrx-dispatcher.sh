@@ -9,6 +9,11 @@ WORKSPACE_CACHE=$( hyprctl activewindow | grep workspace | sed 's/^.*workspace:\
 # kill -s TERM $(pidof gqrx)
 hyprctl dispatcher workspace 3; hyprctl dispatcher focuswindow gqrx && hyprctl dispatcher killactive
 
+while [ ! -z "$(hyperctl clients | grep Gqrx)" ]
+then
+    sleep 0.3
+done
+
 gqrx &
 
 while ! ( [ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ] )
