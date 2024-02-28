@@ -31,7 +31,7 @@ let g:gruvbox_italic=1
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set indentexpr=nvim_treesitter#indent()
+set indentexpr
 set smartcase
 set undofile
 set modifiable
