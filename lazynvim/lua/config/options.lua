@@ -1,26 +1,26 @@
 local options = {
-    termguicolors = true,
-    number = true,
-    autoindent = true,
-    ic = true,
-    wrap = true,
-    linebreak = true,
-    mouse = "a",
-    showmatch = true,
-    title = true,
-    foldmethod = "marker",
-    foldlevel = 0,
-    hlsearch = true,
-    incsearch = true,
-    -- relativenumber = true,
-    clipboard = "unnamedplus",
-    -- statuscolumn = "%l %r",
+  termguicolors = true,
+  number = true,
+  autoindent = true,
+  ic = true,
+  wrap = true,
+  linebreak = true,
+  mouse = "a",
+  showmatch = true,
+  title = true,
+  foldmethod = "marker",
+  foldlevel = 0,
+  hlsearch = true,
+  incsearch = true,
+  -- relativenumber = true,
+  clipboard = "unnamedplus",
+  -- statuscolumn = "%l %r",
 }
 
 vim.g.autoformat = true
 
 for k, v in pairs(options) do
-    vim.opt[k] = v
+  vim.opt[k] = v
 end
 
 vim.cmd([[
@@ -31,7 +31,7 @@ let g:gruvbox_italic=1
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
+set indentexpr
 set smartcase
 set undofile
 set modifiable
@@ -72,5 +72,5 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 ]])
 
 vim.keymap.set({ "n", "x" }, "<leader>sr", function()
-    require("ssr").open()
+  require("ssr").open()
 end)
