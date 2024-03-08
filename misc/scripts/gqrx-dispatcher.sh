@@ -8,10 +8,11 @@ WORKSPACE_CACHE=$(hyprctl activewindow | grep workspace | sed 's/^.*workspace:\ 
 
 # kill -s TERM $(pidof gqrx)
 hyprctl dispatcher workspace 3
-if [ ! -z "$(hyperctl clients | grep Gqrx)" ]; then
+sleep 1
+if [ ! -z "$(hyprctl clients | grep Gqrx)" ]; then
 	hyprctl dispatcher focuswindow gqrx && hyprctl dispatcher killactive
-
-	while [ ! -z "$(hyperctl clients | grep Gqrx)" ]; do
+	sleep 1
+	while [ ! -z "$(hyprctl clients | grep Gqrx)" ]; do
 		sleep 0.3
 	done
 fi
@@ -35,11 +36,11 @@ done
 
 sleep 1
 
-hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0
+hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0 && hyprctl dispatch movecursortocorner 1 && ydotool mousemove -x -200 -y -100 && ydotool click 0xC0
 
 sleep 0.5
 
-foot ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 100 &
+foot ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50 --udp_listen &
 
 sleep 0.5
 

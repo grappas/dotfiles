@@ -28,8 +28,8 @@ let g:rainbow_active = 1
 
 let g:gruvbox_italic=1
 
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set indentexpr
 set smartcase

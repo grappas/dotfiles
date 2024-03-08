@@ -75,14 +75,11 @@ inoremap ? ?<c-g>u
 tnoremap <Esc> <C-\><C-n>
 command Terminal :below 7split | terminal
 
-"switch buffers
-nnoremap <C-h> :bprev<CR>
-nnoremap <C-j> :bnext<CR>
-
 "toggle comment
 "nnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 "vnoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 "inoremap <C-Bslash> :call nerdcommenter#Comment('0', 'toggle')<CR>
 ]])
 
-
+vim.keymap.set("n", "<C-k>", require("before").jump_to_last_edit, {})
+vim.keymap.set("n", "<C-l>", require("before").jump_to_next_edit, {})
