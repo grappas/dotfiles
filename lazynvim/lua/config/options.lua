@@ -31,7 +31,7 @@ let g:gruvbox_italic=1
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
-set indentexpr
+set smartindent
 set smartcase
 set undofile
 set modifiable
@@ -40,6 +40,7 @@ set noshowmode
 set laststatus=2
 autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 syntax on
+set completeopt=menu,menuone,noselect
 
 if has('win64')
 set shell=powershell.exe
