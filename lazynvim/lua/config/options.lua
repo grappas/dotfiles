@@ -28,8 +28,8 @@ let g:rainbow_active = 1
 
 let g:gruvbox_italic=1
 
-set tabstop=2 softtabstop=2
-set shiftwidth=2
+" set tabstop=2 softtabstop=2
+" set shiftwidth=2
 set expandtab
 set smartindent
 set smartcase
@@ -40,7 +40,6 @@ set noshowmode
 set laststatus=2
 autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 syntax on
-set completeopt=menu,menuone,noselect
 
 if has('win64')
 set shell=powershell.exe

@@ -147,3 +147,6 @@ then
     source ~/.myzshrc
 fi
 
+precmd() {
+    print -Pn "\e]133;A\e\\"
+}

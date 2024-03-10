@@ -16,7 +16,7 @@ if [ ! -z "$(hyprctl clients | grep Gqrx)" ]; then
 		sleep 0.3
 	done
 fi
-gqrx &
+~/instalancje/gqrx/src/gqrx&
 
 while ! ([ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ]); do
 	sleep 0.3
@@ -36,7 +36,7 @@ done
 
 sleep 1
 
-hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && ydotool mousemove -x 35 -y 50 && ydotool click 0xC0 && hyprctl dispatch movecursortocorner 1 && ydotool mousemove -x -200 -y -100 && ydotool click 0xC0
+hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sleep 0.3 && ydotool mousemove -x 35 -y 50 && sleep 0.3 && ydotool click 0xC0 && sleep 0.3 && hyprctl dispatch movecursortocorner 1 && sleep 0.3 && ydotool mousemove -x -200 -y -100 && sleep 0.3 && ydotool click 0xC0
 
 sleep 0.5
 
