@@ -51,13 +51,13 @@ while true; do
 			if [ $NO_STEPS -gt 0 ]; then
 				hyprctl keyword bind CONTROL,code:21,pass,address:$ADDRESS_CACHE
 				seq 1 $NO_STEPS | while read _; do
-					ydotool key -d 10 29:1 13:1 13:0 29:0
+					ydotool key -d 1 29:1 13:1 13:0 29:0
 				done
 				hyprctl keyword unbind CONTROL,code:21
 			elif [ $NO_STEPS -lt 0 ]; then
 				hyprctl keyword bind CONTROL,code:20,pass,address:$ADDRESS_CACHE
 				seq 1 $(($NO_STEPS * -1 ))| while read _; do
-					ydotool key -d 10 29:1 12:1 12:0 29:0
+					ydotool key -d 1 29:1 12:1 12:0 29:0
 				done
 				hyprctl keyword unbind CONTROL,code:20
 			fi
