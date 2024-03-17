@@ -1,0 +1,17 @@
+import = ["~/.config/alacritty/gruvbox-dark.toml"]
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "VictorMono NF"
+
+[window]
+opacity = 0.9
+
+[scrolling]
+
+[cursor]
+
+style = {shape = "Block", blinking = "always"}
+blink_interval = 300
