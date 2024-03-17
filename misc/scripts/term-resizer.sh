@@ -1,20 +1,21 @@
 #!/bin/sh
 
 # This script will resize fonts inside the terminal according to size of its window.
-# usage: term-resizer.sh <term> <nominal_width> <nominal_height> <font_size>
+# usage: term-resizer.sh <term> <nominal_width> <nominal_height> <steps_count>
 # term: the class of the terminal, e.g. "foot"
 # nominal_width: the width of window on its default font size
 # nominal_height: the height of window on its default font size
-# font_size: the default font size of the terminal
+# steps_count: the default font size of the terminal. This will be used to calculate the steps for resizing.
+# more the steps, scales smaller
 # jq and ydotool are required for this script to work.
 
-TERMID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13; echo)
+TERMID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13; echo) # id for script's instance
 TERM="$1"
 NOMINAL_WIDTH="$2"
 NOMINAL_HEIGHT="$3"
-FONT_SIZE=$4 # distribute for both width and height
-W_STEP_SIZE=$((NOMINAL_WIDTH / FONT_SIZE))
-H_STEP_SIZE=$((NOMINAL_HEIGHT / FONT_SIZE))
+STEPS_COUNT=$4 # distribute for both width and height
+W_STEP_SIZE=$((NOMINAL_WIDTH / STEPS_COUNT))
+H_STEP_SIZE=$((NOMINAL_HEIGHT / STEPS_COUNT))
 
 >/tmp/term-resizer-cache.$TERMID
 
@@ -47,6 +48,7 @@ while true; do
 				NO_STEPS=$(($W_NO_STEPS + $H_NO_STEPS))
 				echo "$address $NO_STEPS"
 
+				# strip it of quotes for hyprctl
 				ADDRESS_CACHE=$(echo "$address" | sed 's/\"//g')
 
 				if [ $NO_STEPS -gt 0 ]; then
