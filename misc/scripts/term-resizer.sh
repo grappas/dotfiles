@@ -36,35 +36,31 @@ while true; do
 		# script's logic
 
 		cat /tmp/term-resizer-cache.txt | grep $address | while read each width height; do
-		if [ "$WIDTH" -ne "$width" ] || [ "$HEIGHT" -ne "$height" ]; then
+			if [ "$WIDTH" -ne "$width" ] || [ "$HEIGHT" -ne "$height" ]; then
 
-			WDELTA=$(($WIDTH - $width))
-			HDELTA=$(($HEIGHT - $height))
+				WDELTA=$(($WIDTH - $width))
+				HDELTA=$(($HEIGHT - $height))
 
-			W_NO_STEPS=$(($WDELTA / $W_STEP_SIZE))
-			H_NO_STEPS=$(($HDELTA / $H_STEP_SIZE))
-			NO_STEPS=$(($W_NO_STEPS + $H_NO_STEPS))
-			echo "$address $NO_STEPS"
+				W_NO_STEPS=$(($WDELTA / $W_STEP_SIZE))
+				H_NO_STEPS=$(($HDELTA / $H_STEP_SIZE))
+				NO_STEPS=$(($W_NO_STEPS + $H_NO_STEPS))
+				echo "$address $NO_STEPS"
 
-			ADDRESS_CACHE=$(echo "$address" | sed 's/\"//g')
+				ADDRESS_CACHE=$(echo "$address" | sed 's/\"//g')
 
-			if [ $NO_STEPS -gt 0 ]; then
-				hyprctl keyword bind CONTROL,code:21,pass,address:$ADDRESS_CACHE
-				seq 1 $NO_STEPS | while read _; do
-					ydotool key -d 1 29:1 13:1 13:0 29:0
-				done
-				hyprctl keyword unbind CONTROL,code:21
-			elif [ $NO_STEPS -lt 0 ]; then
-				hyprctl keyword bind CONTROL,code:20,pass,address:$ADDRESS_CACHE
-				seq 1 $(($NO_STEPS * -1 ))| while read _; do
-					ydotool key -d 1 29:1 12:1 12:0 29:0
-				done
-				hyprctl keyword unbind CONTROL,code:20
+				if [ $NO_STEPS -gt 0 ]; then
+					hyprctl keyword bind CONTROL,code:21,pass,address:$ADDRESS_CACHE
+					ydotool key 29:1$( seq 1 $NO_STEPS | while read _; do echo -n " 13:1 13:0"; done) 29:0
+					hyprctl keyword unbind CONTROL,code:21
+				elif [ $NO_STEPS -lt 0 ]; then
+					hyprctl keyword bind CONTROL,code:20,pass,address:$ADDRESS_CACHE
+					ydotool key 29:1$( seq 1 $(($NO_STEPS * -1)) | while read _; do echo -n " 12:1 12:0"; done) 29:0
+					hyprctl keyword unbind CONTROL,code:20
+				fi
+
+				NEW_CACHE=$(cat /tmp/term-resizer-cache.txt | sed 's/'"$address"'.*$/'$address'\ '$WIDTH'\ '$HEIGHT'/')
+				echo "$NEW_CACHE" >/tmp/term-resizer-cache.txt
 			fi
-
-			NEW_CACHE=$(cat /tmp/term-resizer-cache.txt | sed 's/'"$address"'.*$/'$address'\ '$WIDTH'\ '$HEIGHT'/')
-			echo "$NEW_CACHE" >/tmp/term-resizer-cache.txt
-		fi
 		done
 
 		# delist from gc
