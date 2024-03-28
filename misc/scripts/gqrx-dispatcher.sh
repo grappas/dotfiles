@@ -40,7 +40,7 @@ hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sl
 
 sleep 0.5
 
-alacritty -e ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50 --udp_listen &
+foot -e ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50 --udp_listen &
 
 sleep 0.5
 
