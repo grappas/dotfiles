@@ -3,7 +3,7 @@
     "layer": "top",
     "height": 24,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/playerctl"],
+    // "modules-center": ["custom/playerctl"],
     "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
     // Modules configuration
 	"clock": {
