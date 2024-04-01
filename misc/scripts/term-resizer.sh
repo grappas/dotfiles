@@ -9,7 +9,6 @@
 # more the steps, scales smaller
 # jq and ydotool are required for this script to work.
 
-TERMID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13; echo) # id for script's instance
 TERM="$1"
 NOMINAL_WIDTH="$2"
 NOMINAL_HEIGHT="$3"
@@ -17,19 +16,19 @@ STEPS_COUNT=$4 # distribute for both width and height
 W_STEP_SIZE=$((NOMINAL_WIDTH / STEPS_COUNT))
 H_STEP_SIZE=$((NOMINAL_HEIGHT / STEPS_COUNT))
 
->/tmp/term-resizer-cache.$TERMID
+>/tmp/term-resizer-cache.$$
 
 while true; do
 	# init gc
-	cat /tmp/term-resizer-cache.$TERMID >/tmp/term-resizer-gc.$TERMID
+	cat /tmp/term-resizer-cache.$$ >/tmp/term-resizer-gc.$$
 	# get all info about the terminals
 	GATHER_TERMINALS=$(hyprctl -j clients | jq '.[] | select(.class=="'${TERM}'")')
 
 	# strip the addresses and loop through them
 	echo "$GATHER_TERMINALS" | jq '.address' | while read address; do
 		# check if window exists in the cache
-		if [ -z "$(cat /tmp/term-resizer-cache.$TERMID | grep $address)" ]; then
-			echo "$address $NOMINAL_WIDTH $NOMINAL_HEIGHT" >>/tmp/term-resizer-cache.$TERMID
+		if [ -z "$(cat /tmp/term-resizer-cache.$$ | grep $address)" ]; then
+			echo "$address $NOMINAL_WIDTH $NOMINAL_HEIGHT" >>/tmp/term-resizer-cache.$$
 		fi
 		# get the width and height of the terminal
 		WIDTH=$(echo "$GATHER_TERMINALS" | jq -r 'select(.address=='$address') | .size[0]')
@@ -37,7 +36,7 @@ while true; do
 
 		# script's logic
 
-		cat /tmp/term-resizer-cache.$TERMID | grep $address | while read each width height; do
+		cat /tmp/term-resizer-cache.$$ | grep $address | while read each width height; do
 			if [ "$WIDTH" -ne "$width" ] || [ "$HEIGHT" -ne "$height" ]; then
 
 				WDELTA=$(($WIDTH - $width))
@@ -61,21 +60,21 @@ while true; do
 					hyprctl keyword unbind CONTROL,code:20
 				fi
 
-				NEW_CACHE=$(cat /tmp/term-resizer-cache.$TERMID | sed 's/'"$address"'.*$/'$address'\ '$WIDTH'\ '$HEIGHT'/')
-				echo "$NEW_CACHE" >/tmp/term-resizer-cache.$TERMID
+				NEW_CACHE=$(cat /tmp/term-resizer-cache.$$ | sed 's/'"$address"'.*$/'$address'\ '$WIDTH'\ '$HEIGHT'/')
+				echo "$NEW_CACHE" >/tmp/term-resizer-cache.$$
 			fi
 		done
 
 		# delist from gc
-		GARBAGE_COLLECTOR=$(cat /tmp/term-resizer-gc.$TERMID | grep -v "$address")
-		echo "$GARBAGE_COLLECTOR" >/tmp/term-resizer-gc.$TERMID
+		GARBAGE_COLLECTOR=$(cat /tmp/term-resizer-gc.$$ | grep -v "$address")
+		echo "$GARBAGE_COLLECTOR" >/tmp/term-resizer-gc.$$
 	done
 
 	# remove old entries from cache
-	if [ -n "$(cat /tmp/term-resizer-gc.$TERMID)" ]; then
-		cat /tmp/term-resizer-gc.$TERMID | while read each width height; do
-			GARBAGE_COLLECTOR=$(cat /tmp/term-resizer-cache.$TERMID | grep -v "$each")
-			echo "$GARBAGE_COLLECTOR" >/tmp/term-resizer-cache.$TERMID
+	if [ -n "$(cat /tmp/term-resizer-gc.$$)" ]; then
+		cat /tmp/term-resizer-gc.$$ | while read each width height; do
+			GARBAGE_COLLECTOR=$(cat /tmp/term-resizer-cache.$$ | grep -v "$each")
+			echo "$GARBAGE_COLLECTOR" >/tmp/term-resizer-cache.$$
 		done
 	fi
 	sleep 1
