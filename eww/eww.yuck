@@ -1,255 +1,256 @@
 (defwidget time []
-(
-        box
-        :class "time"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "0"
-        time
-    ))
+        (
+                box
+                :class "time"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "0"
+                time
+        ))
 (defwidget separator []
-(
-        box
-        :class "separator"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "0"
-        "▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦"
-    ))
+        (
+                box
+                :class "separator"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "0"
+                "▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦"
+        ))
 
 (defwidget date []
-(
-        box
-        :class "date"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "0"
-        date
-    ))
+        (
+                box
+                :class "date"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "0"
+                date
+        ))
 
 (defwidget cpu_monitor_overall_usage []
-(
-        box
-        :class "cpu_monitor"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        cpu_overall_usage_percent
-    ))
+        (
+                box
+                :class "cpu_monitor"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                cpu_overall_usage_percent
+        ))
 (defwidget cpu_monitor_overall_usage_sensors_1 []
-(
-        box
-        :class "cpu_sensors"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        cpu_overall_usage_sensors_1
-    ))
+        (
+                box
+                :class "cpu_sensors"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                cpu_overall_usage_sensors_1
+        ))
 (defwidget cpu_monitor_per_core_usage []
-(
-        box
-        :class "cpu_monitor"
-        :orientation "v"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        cpu_per_core_usage
-    ))
+        (
+                box
+                :class "cpu_monitor"
+                :orientation "v"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                cpu_per_core_usage
+        ))
 
 (defwidget cpu_top []
-(
-        box
-        :class "top"
-        :orientation "v"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        cpu_top
-    ))
+        (
+                box
+                :class "top"
+                :orientation "v"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                cpu_top
+        ))
 (defwidget mem_top []
-(
-        box
-        :class "vtop"
-        :orientation "v"
-        :space-evenly true
-        :valign "start"
-        :halign "right"
-        mem_top
-    ))
+        (
+                box
+                :class "vtop"
+                :orientation "v"
+                :space-evenly true
+                :valign "start"
+                :halign "right"
+                mem_top
+        ))
 (defwidget mem_bar []
-(
-        box
-        :class "mem_bar"
-        :orientation "v"
-        :space-evenly true
-        :valign "start"
-        :halign "right"
-        mem_bar
-    ))
+        (
+                box
+                :class "mem_bar"
+                :orientation "v"
+                :space-evenly true
+                :valign "start"
+                :halign "right"
+                mem_bar
+        ))
 
 (defwidget gpu_usage_bar []
-(
-        box
-        :class "gpu_bar"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        gpu_usage_bar
-    ))
+        (
+                box
+                :class "gpu_bar"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                gpu_usage_bar
+        ))
 (defwidget gpu_memory_bar []
-(
-        box
-        :class "gpu_bar"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        gpu_memory_bar
-    ))
+        (
+                box
+                :class "gpu_bar"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                gpu_memory_bar
+        ))
 (defwidget gpu_gtt_bar []
-(
-        box
-        :class "gpu_bar"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        gpu_gtt_bar
-    ))
+        (
+                box
+                :class "gpu_bar"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                gpu_gtt_bar
+        ))
 (defwidget gpu_sensors []
+        (
+                box
+                :class "gpu_sensors"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                gpu_sensors
+        ))
 (
-        box
-        :class "gpu_sensors"
-        :orientation "h"
-        :space-evenly true
-        :valign "start"
-        :halign "middle"
-        :spacing "1"
-        gpu_sensors
-    ))
-(
-    defwidget lets_gather_it_all []
-(
-        box
-        :class "whole"
-        :orientation "v"
-        :space-evenly false
-        :valign "start"
-        :halign "middle"
-        :spacing "5"
-    (time)
-    (date)
-        (separator)
-    ( cpu_monitor_overall_usage )
-    ( cpu_monitor_overall_usage_sensors_1 )
-    ( cpu_monitor_per_core_usage )
-    ( cpu_top )
-        (separator)
-    ( mem_bar )
-    ( mem_top )
-        (separator)
-    ( gpu_usage_bar )
-    ( gpu_memory_bar )
-    ( gpu_gtt_bar )
-    ( gpu_sensors )
-    )
+        defwidget lets_gather_it_all []
+        (
+                box
+                :class "whole"
+                :orientation "v"
+                :space-evenly false
+                :valign "start"
+                :halign "middle"
+                :spacing "5"
+                (time)
+                (date)
+                (separator)
+                ( cpu_monitor_overall_usage )
+                ( cpu_monitor_overall_usage_sensors_1 )
+                ( cpu_monitor_per_core_usage )
+                ( cpu_top )
+                (separator)
+                ( mem_bar )
+                ( mem_top )
+                (separator)
+                ( gpu_usage_bar )
+                ( gpu_memory_bar )
+                ( gpu_gtt_bar )
+                ( gpu_sensors )
+                (systray :pack-direction "ttb")
+        )
 )
 
-    (defwindow monitor1
-    :monitor 0
-    :stacking "bottom"
-    :exclusive true
-    :focusable false
-    :geometry (geometry :x "8px"
-        :y "0%"
-        :width "160px"
-        :height "55%"
-        :anchor "right center")
-(lets_gather_it_all))
+(defwindow monitor1
+        :monitor 0
+        :stacking "bottom"
+        :exclusive true
+        :focusable false
+        :geometry (geometry :x "8px"
+                :y "0%"
+                :width "240px"
+                :height "55%"
+                :anchor "right center")
+        (lets_gather_it_all))
 
-    (defwindow monitor2
-    :monitor 1
-    :stacking "bottom"
-    :exclusive true
-    :focusable false
-    :geometry (geometry :x "8px"
-        :y "0%"
-        :width "160px"
-        :height "55%"
-        :anchor "left center")
-(lets_gather_it_all))
-
-(
-    defpoll time :interval "1s"
-    "date '+%H:%M:%S'"
-)
+(defwindow monitor2
+        :monitor 1
+        :stacking "bottom"
+        :exclusive true
+        :focusable false
+        :geometry (geometry :x "8px"
+                :y "0%"
+                :width "240px"
+                :height "55%"
+                :anchor "left center")
+        (lets_gather_it_all))
 
 (
-    defpoll date :interval "1m"
-    "date '+%a, %d %B %Y'"
+        defpoll time :interval "1s"
+        "date '+%H:%M:%S'"
 )
 
 (
-    defpoll cpu_overall_usage_percent
-    :interval "1s"
-    "sh ~/.config/eww/scripts/cpu_usage_overall.sh"
+        defpoll date :interval "1m"
+        "date '+%a, %d %B %Y'"
+)
+
+(
+        defpoll cpu_overall_usage_percent
+        :interval "1s"
+        "sh ~/.config/eww/scripts/cpu_usage_overall.sh"
 )
 (
-    defpoll cpu_overall_usage_sensors_1
-    :interval "1s"
-    "sh ~/.config/eww/scripts/cpu_usage_sensors_1.sh"
+        defpoll cpu_overall_usage_sensors_1
+        :interval "1s"
+        "sh ~/.config/eww/scripts/cpu_usage_sensors_1.sh"
 )
 (
-    defpoll cpu_per_core_usage
-    :interval "1s"
-    "sh ~/.config/eww/scripts/cpu_usage_per_core.sh"
+        defpoll cpu_per_core_usage
+        :interval "1s"
+        "sh ~/.config/eww/scripts/cpu_usage_per_core.sh"
 )
 (
-    defpoll cpu_top
-    :interval "1s"
-    "sh ~/.config/eww/scripts/cpu_top.sh"
+        defpoll cpu_top
+        :interval "1s"
+        "sh ~/.config/eww/scripts/cpu_top.sh"
 )
 (
-    defpoll mem_top
-    :interval "1s"
-    "sh ~/.config/eww/scripts/mem_top.sh"
+        defpoll mem_top
+        :interval "1s"
+        "sh ~/.config/eww/scripts/mem_top.sh"
 )
 (
-    defpoll mem_bar
-    :interval "1s"
-    "sh ~/.config/eww/scripts/mem_bar.sh"
+        defpoll mem_bar
+        :interval "1s"
+        "sh ~/.config/eww/scripts/mem_bar.sh"
 )
 (
-    defpoll gpu_usage_bar
-    :interval "1s"
-    "sh ~/.config/eww/scripts/gpu_usage_bar.sh"
+        defpoll gpu_usage_bar
+        :interval "1s"
+        "sh ~/.config/eww/scripts/gpu_usage_bar.sh"
 )
 (
-    defpoll gpu_memory_bar
-    :interval "1s"
-    "sh ~/.config/eww/scripts/gpu_memory_bar.sh"
+        defpoll gpu_memory_bar
+        :interval "1s"
+        "sh ~/.config/eww/scripts/gpu_memory_bar.sh"
 )
 (
-    defpoll gpu_gtt_bar
-    :interval "1s"
-    "sh ~/.config/eww/scripts/gpu_gtt_bar.sh"
+        defpoll gpu_gtt_bar
+        :interval "1s"
+        "sh ~/.config/eww/scripts/gpu_gtt_bar.sh"
 )
 (
-    defpoll gpu_sensors
-    :interval "1s"
-    "sh ~/.config/eww/scripts/gpu_sensors.sh"
+        defpoll gpu_sensors
+        :interval "1s"
+        "sh ~/.config/eww/scripts/gpu_sensors.sh"
 )

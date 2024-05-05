@@ -1,8 +1,8 @@
 #!/bin/sh
 
-sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe2 &
-sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3 &
-sh ~/skrypty/sftp_mount.sh jakub 192.168.0.150 /home/jakub &
+# sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe2 &
+# sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3 &
+# sh ~/skrypty/sftp_mount.sh jakub 192.168.0.150 /home/jakub &
 
 WORKSPACE_CACHE=$(hyprctl activewindow | grep workspace | sed 's/^.*workspace:\ //g' | sed 's/\ (*.*)//g')
 
@@ -36,7 +36,7 @@ done
 
 sleep 1
 
-hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sleep 0.3 && ydotool mousemove -x 35 -y 50 && sleep 0.3 && ydotool click 0xC0 && sleep 0.3 && hyprctl dispatch movecursortocorner 1 && sleep 0.3 && ydotool mousemove -x -200 -y -100 && sleep 0.3 && ydotool click 0xC0
+hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sleep 0.3 && ydotool mousemove -x 35 -y 50 && sleep 0.3 && ydotool click 0xC0 && sleep 0.3 && hyprctl dispatch movecursortocorner 1 && sleep 0.3 && ydotool mousemove -x -200 -y -75 && sleep 0.3 && ydotool click 0xC0
 
 sleep 0.5
 

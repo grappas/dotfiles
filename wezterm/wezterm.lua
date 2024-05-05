@@ -1,7 +1,13 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
 local act = wezterm.action
 local mykeys = {
 }
+
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():restore()
+end)
 
 local My_font_size = 14.0
 local Font_size = My_font_size
