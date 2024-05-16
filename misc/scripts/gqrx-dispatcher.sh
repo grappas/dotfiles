@@ -36,7 +36,7 @@ done
 
 sleep 1
 
-hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sleep 0.3 && ydotool mousemove -x 35 -y 50 && sleep 0.3 && ydotool click 0xC0 && sleep 0.3 && hyprctl dispatch movecursortocorner 1 && sleep 0.3 && ydotool mousemove -x -200 -y -75 && sleep 0.3 && ydotool click 0xC0
+hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sleep 0.3 && ydotool mousemove -x 35 -y 50 && sleep 0.3 && ydotool click 0xC0 && sleep 0.3 && hyprctl dispatch movecursortocorner 1 && sleep 0.3 && ydotool mousemove -x -230 -y -75 && sleep 0.3 && ydotool click 0xC0
 
 sleep 0.5
 
