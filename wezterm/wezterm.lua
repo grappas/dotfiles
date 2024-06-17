@@ -9,7 +9,7 @@ wezterm.on('gui-startup', function(cmd)
   window:gui_window():restore()
 end)
 
-local My_font_size = 14.0
+local My_font_size = 12.0
 local Font_size = My_font_size
 
 function Recompute_font_size(window)

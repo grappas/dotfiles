@@ -1,5 +1,6 @@
 #!/bin/sh
 #
+hyprctl dispatcher exec ydotoold
 while [ true ]
 do
     while [ ! -f ~/temp/wakeup ]

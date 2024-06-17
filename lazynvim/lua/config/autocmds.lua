@@ -13,3 +13,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
     })
   end,
 })
+
+
+local project_specific_init = vim.fn.getcwd() .. '/init.lua'
+if vim.fn.filereadable(project_specific_init) == 1 then
+    dofile(project_specific_init)
+end
