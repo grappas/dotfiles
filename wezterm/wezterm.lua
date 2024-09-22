@@ -76,11 +76,11 @@ return {
     window_background_opacity = 0.9,
     window_close_confirmation = 'NeverPrompt',
     default_prog = Default_prog,
-    -- enable_wayland = false,
+    enable_wayland = true,
     hide_tab_bar_if_only_one_tab = true,
     default_cursor_style = 'SteadyBlock',
     scrollback_lines = 184467440,
-    front_end = "WebGpu",
+    -- front_end = "WebGpu",
 
     keys = {
         -- {{{1

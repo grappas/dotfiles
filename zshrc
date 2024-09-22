@@ -82,7 +82,6 @@ plugins=(
     colorize
     nmap
     rsync
-    ripgrep
     tmux
     ssh-agent
     fzf
