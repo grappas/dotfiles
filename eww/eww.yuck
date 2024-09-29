@@ -173,7 +173,7 @@
 (defwindow monitor1
         :monitor 0
         :stacking "bottom"
-        :exclusive true
+        :exclusive false
         :focusable false
         :geometry (geometry :x "8px"
                 :y "0%"
@@ -185,7 +185,7 @@
 (defwindow monitor2
         :monitor 1
         :stacking "bottom"
-        :exclusive true
+        :exclusive false
         :focusable false
         :geometry (geometry :x "8px"
                 :y "0%"
