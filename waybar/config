@@ -3,11 +3,11 @@
     "layer": "top",
     "height": 24,
     "modules-left": ["hyprland/workspaces"],
-    // "modules-center": ["custom/playerctl"],
+    "modules-center": ["custom/dupa"],
     "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
     // Modules configuration
 	"clock": {
-		"format": "<big>{:%T\n%d.%m.%y\n%A}</big>",
+		"format": "<big>{:%T %d.%m.%y %A}</big>",
 		"tooltip": "true",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         	"format-alt": "{:%d/%m}"
