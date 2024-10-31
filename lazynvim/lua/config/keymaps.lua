@@ -9,12 +9,6 @@ command Bd :b# | bw# | bn | bp
 command Bdw :w | b# | bw# | bn | bp
 command Bdd :b# | bw!# | bn | bp
 
-" FZF
-map gtt :Telescope<CR>
-map <C-p> :Telescope find_files hidden=true no_ignore=true<CR>
-map <C-f> :Telescope live_grep hidden=true no_ignore=true<CR>
-nnoremap <leader>pp :Telescope registers<CR>
-
 " a co to?
 map <S-Tab> :bn<CR>
 
