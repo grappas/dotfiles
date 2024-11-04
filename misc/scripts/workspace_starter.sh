@@ -1,21 +1,19 @@
 #!/bin/sh
 #
 
-cat ~/.config/hypr/autostart_list.txt | while read A B
-do
-    "$A"&
-    while ! [ "$( hyprctl clients | grep -i "$A" )" ]
-    do
+while read -r A B; do
+    hyprctl dispatch exec "$A"
+    while ! [ "$(hyprctl clients | grep -i "$A")" ]; do
         sleep 1
     done
     sleep 2
-    hyprctl dispatch focuswindow $A
+    hyprctl dispatch focuswindow "$A"
     sleep 0.5
-    hyprctl dispatch movetoworkspacesilent $B
+    hyprctl dispatch movetoworkspacesilent "$B"
     sleep 0.5
     hyprctl dispatch workspace 1
-done
+done <~/.config/hypr/autostart_list.txt
 
 sleep 1
 
-sh $(dirname $0)/gqrx-watchdog.sh&
+sh $(dirname $0)/gqrx-watchdog.sh &
