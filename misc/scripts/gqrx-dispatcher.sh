@@ -1,4 +1,7 @@
 #!/bin/sh
+killall hypridle
+sleep 0.1
+hyprctl dispatch exec hypridle
 
 # sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe2 &
 # sh ~/skrypty/sftp_mount.sh armalauncher 192.168.0.150 /home/eftepe3 &
@@ -16,7 +19,7 @@ if [ ! -z "$(hyprctl clients | grep Gqrx)" ]; then
 		sleep 0.3
 	done
 fi
-~/instalancje/gqrx/src/gqrx&
+~/instalancje/gqrx/src/gqrx &
 
 while ! ([ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ]); do
 	sleep 0.3
