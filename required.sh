@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-yay -S --noconfirm --optional \
+yay -S --noconfirm \
   fd \
   fzf \
   git \
