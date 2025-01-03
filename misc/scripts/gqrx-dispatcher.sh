@@ -19,7 +19,7 @@ if [ ! -z "$(hyprctl clients | grep Gqrx)" ]; then
 		sleep 0.3
 	done
 fi
-~/instalancje/gqrx/src/gqrx &
+uwsm app -- gqrx &
 
 while ! ([ "$(hyprctl clients | grep Gqrx)" ] || [ "$(hyprctl clients | grep 'Crash Detected!')" ]); do
 	sleep 0.3
@@ -43,7 +43,7 @@ hyprctl dispatch focuswindow gqrx && hyprctl dispatch movecursortocorner 3 && sl
 
 sleep 0.5
 
-wezterm -e ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50 --udp_listen &
+uwsm app -- wezterm -e ~/instalancje/gqrx-scanner/bin/gqrx-scanner -v -m bookmark -t "Moje|Add" -q a4.0 -x 50 --udp_listen &
 
 sleep 0.5
 
