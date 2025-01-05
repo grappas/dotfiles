@@ -27,4 +27,6 @@ yay -S --noconfirm \
   grimblast \
   uwsm \
   neovim \
+  qt6ct \
+  qt5ct \
   zsh
