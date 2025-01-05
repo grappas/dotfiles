@@ -1,0 +1,10 @@
+[plugin]
+deps = [
+  { use = "dedukun/relative-motions", rev = "df97039" },
+  { use = "Ape/open-with-cmd", rev = "a80d1cf" },
+  { use = "yazi-rs/plugins:smart-filter", rev = "600614a" },
+  { use = "Ape/smart-enter", rev = "2ab3c5c" },
+]
+
+[flavor]
+deps = []

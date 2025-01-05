@@ -10,4 +10,5 @@ lazynvim/lazyvim.json
 tmux/plugins
 tmux/plugins/*
 lazynvim/sysinit.vim
-
+yazi/plugins
+yazi/plugins/*

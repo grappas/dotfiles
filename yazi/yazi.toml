@@ -1,0 +1,20 @@
+[manager]
+show_hidden = false
+sort_by = "mtime"
+sort_reverse = true
+sort_dir_first = true
+linemode = "mtime"
+prepend_keymap = [{ on = "<C-y>", run = ["plugin system-clipboard"] }]
+
+[opener]
+open = [{ run = 'xdg-open "$@"', desc = "Open" }]
+
+[plugin]
+prepend_previewers = [
+  { name = "*.csv", run = "rich-preview" },   # for csv files
+  { name = "*.md", run = "rich-preview" },    # for markdown (.md) files
+  { name = "*.rst", run = "rich-preview" },   # for restructured text (.rst) files
+  { name = "*.ipynb", run = "rich-preview" }, # for jupyter notebooks (.ipynb)
+  { name = "*.json", run = "rich-preview" },  # for json (.json) files
+  #    { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
+]
