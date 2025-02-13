@@ -51,12 +51,12 @@ while true; do
 				ADDRESS_CACHE=$(echo "$address" | sed 's/\"//g')
 
 				if [ $NO_STEPS -gt 0 ]; then
-					hyprctl keyword bind CONTROL,code:21,pass,address:$ADDRESS_CACHE
-					ydotool key 29:1$( seq 1 $NO_STEPS | while read _; do echo -n " 13:1 13:0"; done) 29:0
+					hyprctl keyword bind CONTROL,code:21,pass,address:"$ADDRESS_CACHE"
+					ydotool key 29:1"$(seq 1 $NO_STEPS | while read -r _; do printf " 13:1 13:0"; done)" 29:0
 					hyprctl keyword unbind CONTROL,code:21
 				elif [ $NO_STEPS -lt 0 ]; then
-					hyprctl keyword bind CONTROL,code:20,pass,address:$ADDRESS_CACHE
-					ydotool key 29:1$( seq 1 $(($NO_STEPS * -1)) | while read _; do echo -n " 12:1 12:0"; done) 29:0
+					hyprctl keyword bind CONTROL,code:20,pass,address:"$ADDRESS_CACHE"
+					ydotool key 29:1"$(seq 1 $(($NO_STEPS * -1)) | while read -r _; do printf " 12:1 12:0"; done)" 29:0
 					hyprctl keyword unbind CONTROL,code:20
 				fi
 
