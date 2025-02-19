@@ -13,7 +13,7 @@ WORKSPACE_CACHE=$(hyprctl activewindow | grep workspace | sed 's/^.*workspace:\ 
 hyprctl dispatcher workspace 3
 sleep 1
 if [ ! -z "$(hyprctl clients | grep Gqrx)" ]; then
-	hyprctl dispatcher focuswindow gqrx && hyprctl dispatcher killactive
+	hyprctl dispatcher focuswindow gqrx && sleep 0.5 && hyprctl dispatcher killactive
 	sleep 1
 	while [ ! -z "$(hyprctl clients | grep Gqrx)" ]; do
 		sleep 0.3

@@ -1,10 +1,22 @@
-[plugin]
-deps = [
-  { use = "dedukun/relative-motions", rev = "df97039" },
-  { use = "Ape/open-with-cmd", rev = "a80d1cf" },
-  { use = "yazi-rs/plugins:smart-filter", rev = "600614a" },
-  { use = "Ape/smart-enter", rev = "2ab3c5c" },
-]
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "df97039"
+hash = "395940d2b22941e0acb1232579c9d4cf"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "a80d1cf"
+hash = "86e0312b01bc5762813c6c1d0517f073"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "600614a"
+hash = "ea24edab4a62c94dbd205adfb6f2c08d"
+
+[[plugin.deps]]
+use = "Ape/smart-enter"
+rev = "2ab3c5c"
+hash = "43eb1a1f2291795fb5b0b2ce1206ebee"
 
 [flavor]
 deps = []

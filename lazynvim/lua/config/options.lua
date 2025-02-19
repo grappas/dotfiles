@@ -18,6 +18,7 @@ local options = {
 }
 
 vim.g.autoformat = true
+vim.g.snacks_animate = false
 
 for k, v in pairs(options) do
   vim.opt[k] = v
