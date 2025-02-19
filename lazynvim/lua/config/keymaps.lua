@@ -77,3 +77,4 @@ command Terminal :below 7split | terminal
 
 vim.keymap.set("n", "<C-k>", require("before").jump_to_last_edit, {})
 vim.keymap.set("n", "<C-l>", require("before").jump_to_next_edit, {})
+vim.keymap.set("n", "<leader>ad", ":CopilotChatFixDiagnostic<CR>", { desc = "Fix Diagnostic with Copilot" })
