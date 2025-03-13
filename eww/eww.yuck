@@ -141,6 +141,17 @@
                 :spacing "1"
                 gpu_sensors
         ))
+(defwidget disk_usage []
+        (
+                box
+                :class "disk_usage"
+                :orientation "h"
+                :space-evenly true
+                :valign "start"
+                :halign "middle"
+                :spacing "1"
+                disk_usage
+        ))
 (
         defwidget lets_gather_it_all []
         (
@@ -161,6 +172,8 @@
                 (separator)
                 ( mem_bar )
                 ( mem_top )
+                (separator)
+                ( disk_usage )
                 (separator)
                 ( gpu_usage_bar )
                 ( gpu_memory_bar )
@@ -253,4 +266,9 @@
         defpoll gpu_sensors
         :interval "1s"
         "sh ~/.config/eww/scripts/gpu_sensors.sh"
+)
+(
+        defpoll disk_usage
+        :interval "5s"
+        "sh ~/.config/eww/scripts/disk_usage.sh"
 )

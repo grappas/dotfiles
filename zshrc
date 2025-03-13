@@ -164,3 +164,4 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+alias append_path=appendpath
