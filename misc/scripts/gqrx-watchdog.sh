@@ -2,11 +2,11 @@
 #
 hyprctl dispatcher exec ydotoold
 while [ true ]; do
-    while [ ! -f ~/temp/wakeup ]; do
+    while [ ! -f /tmp/wakeup ]; do
         sleep 1
     done
     echo "DONE!!!"
-    rm ~/temp/wakeup
+    rm /tmp/wakeup
     uwsm app -- sh ~/skrypty/gqrx-dispatcher.sh &
     sleep 1
 done
