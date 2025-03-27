@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-poll="$(LANG=en df -h | grep -v tmpfs | grep -v '^dev' | grep -v run | grep -v efivars | grep -v Filesystem)"
+poll="$(LANG=en df -h | grep -v boot | grep -v tmpfs | grep -v '^dev' | grep -v run | grep -v efivars | grep -v Filesystem)"
 line_to_print=""
 while read -r disk size _used _avail use _mount; do
   #leave last node (after /)
