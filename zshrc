@@ -83,7 +83,6 @@ plugins=(
     nmap
     rsync
     tmux
-    ssh-agent
     fzf
 	sudo
 	git
