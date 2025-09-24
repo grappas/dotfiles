@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEVICE="14:99:3E:DC:09:75"
+DEVICE="22:22:8E:85:5A:E5"
 
 if [ -z "$(bluetoothctl devices Connected | grep "$DEVICE")" ]; then
     bluetoothctl connect "$DEVICE"
