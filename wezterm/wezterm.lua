@@ -15,7 +15,7 @@ function Recompute_font_size(window)
 	local window_dims = window:get_dimensions()
 	local overrides = window:get_config_overrides() or {}
 	local Dpi = window_dims.dpi / 96
-	local Scale_factor_general = 7
+	local Scale_factor_general = 9
 	local Scale_factor_x = window_dims.pixel_width / (Scale_factor_general * 9 * Dpi)
 	local Scale_factor_y = window_dims.pixel_height / (Scale_factor_general * 7 * Dpi)
 	local Scale_factor = Scale_factor_x

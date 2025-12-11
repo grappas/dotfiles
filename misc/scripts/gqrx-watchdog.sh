@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 hyprctl dispatcher exec ydotoold
-while [ true ]; do
+while true; do
     while [ ! -f /tmp/wakeup ]; do
         sleep 1
     done

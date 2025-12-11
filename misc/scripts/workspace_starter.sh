@@ -1,5 +1,4 @@
-#!/bin/sh
-#
+#!/usr/bin/env bash
 
 while read -r A B; do
     hyprctl dispatch exec "$A"
@@ -16,4 +15,5 @@ done <~/.config/hypr/autostart_list.txt
 
 sleep 1
 
-sh $(dirname $0)/gqrx-watchdog.sh &
+echo "Starting Gqrx watchdog..."
+"$(dirname "$0")"/gqrx-watchdog.sh &
