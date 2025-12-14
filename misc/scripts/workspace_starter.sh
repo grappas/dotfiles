@@ -4,14 +4,18 @@ PREF="$HOME/.config/BraveSoftware/Brave-Browser/Default/Preferences"
 if [ -f "$PREF" ]; then
     sed -i \
         -E 's/"exited_cleanly":\s*(false|true)/"exited_cleanly": true/' \
+        "$PREF"
+    sed -i \
         -E 's/"exit_type":\s*"[^"]*"/"exit_type": "None"/' \
         "$PREF"
 fi
 
 # WARNING: use 2 spaces as delimiter in autostart_list.txt
 while IFS='  ' read -r window_name app argument workspace; do
-    uwsm app -- $app $argument
+    $app "$argument" &
+    disown
     while ! [ "$(hyprctl clients | grep -i "$window_name")" ]; do
+        echo "Szukom okna: $window_name"
         sleep 1
     done
     sleep 2

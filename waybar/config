@@ -20,8 +20,8 @@
 
 	"hyprland/workspaces": {
         "disable-scroll": false,
-        "on-scroll-up": "hyprctl dispatch workspace -2 && sleep 0.01 && ydotool mousemove -x 3 -y 1",
-        "on-scroll-down": "hyprctl dispatch workspace +2 && sleep 0.01 && ydotool mousemove -x -3 -y -1",
+        "on-scroll-up": "hyprctl dispatch workspace m-1 && sleep 0.01 && ydotool mousemove -x 3 -y 1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1 && sleep 0.01 && ydotool mousemove -x -3 -y -1",
 //		"format": "{icon}",
 		"on-click": "activate",
 //		"format-icons": {

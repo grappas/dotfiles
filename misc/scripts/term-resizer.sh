@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # This script will resize fonts inside the terminal according to size of its window.
 # usage: term-resizer.sh <term> <nominal_width> <nominal_height> <steps_count>

@@ -1,4 +1,5 @@
 #!/bin/sh
+
 killall hypridle
 sleep 0.1
 hyprctl dispatch exec hypridle

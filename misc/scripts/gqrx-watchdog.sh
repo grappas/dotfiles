@@ -7,6 +7,6 @@ while true; do
     done
     echo "DONE!!!"
     rm /tmp/wakeup
-    uwsm app -- sh ~/skrypty/gqrx-dispatcher.sh &
+    ~/skrypty/gqrx-dispatcher.sh &
     sleep 1
 done
