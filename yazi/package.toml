@@ -1,22 +1,27 @@
 [[plugin.deps]]
 use = "dedukun/relative-motions"
-rev = "df97039"
-hash = "395940d2b22941e0acb1232579c9d4cf"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "Ape/open-with-cmd"
-rev = "a80d1cf"
+rev = "433cf30"
 hash = "86e0312b01bc5762813c6c1d0517f073"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-filter"
-rev = "600614a"
-hash = "ea24edab4a62c94dbd205adfb6f2c08d"
+rev = "7ca66b4"
+hash = "bcda8eeb3f4013bae156aecabfc745e8"
 
 [[plugin.deps]]
 use = "Ape/smart-enter"
-rev = "2ab3c5c"
+rev = "7b84c89"
 hash = "43eb1a1f2291795fb5b0b2ce1206ebee"
+
+[[plugin.deps]]
+use = "XYenon/clipboard"
+rev = "9089f90"
+hash = "e6efc609de1b617c7e8e98efd5286221"
 
 [flavor]
 deps = []
