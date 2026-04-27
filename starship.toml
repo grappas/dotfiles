@@ -80,7 +80,7 @@ format = '[ $user ]($style)'
 
 [hostname]
 ssh_only = true
-style = "bg:color_orange fg:color_fg0"
+style = "fg:color_fg0 bg:color_orange"
 format = '[on $hostname ]($style)'
 
 [directory]
