@@ -2,7 +2,6 @@
 
 format = """
 [](#458588)\
-$os\
 $username\
 $hostname\
 [](bg:#CC241D fg:#458588)\
@@ -40,7 +39,7 @@ $time\
 show_always = true
 style_user = "bg:#458588"
 style_root = "bg:#458588"
-format = '[$user ]($style)'
+format = '[$user]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
@@ -51,7 +50,7 @@ disabled = false
 
 [hostname]
 ssh_only = true
-style = "bg:#458588"
+style = "fg:#CC241D bg:#458588"
 format = '[@$hostname ]($style)'
 
 [directory]
