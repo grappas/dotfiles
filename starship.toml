@@ -42,14 +42,6 @@ color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
 
-# Colors for root user
-[triangle_style]
-disabled = false
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_red fg:color_fg0"
-format = '[]($style)'
-
-
 [os]
 disabled = false
 style_user = "bg:color_orange fg:color_fg0"
