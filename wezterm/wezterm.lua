@@ -56,7 +56,7 @@ end
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	Default_prog = { "powershell.exe" }
 else
-	Default_prog = { "zsh" }
+	Default_prog = { "bash" }
 end
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
