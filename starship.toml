@@ -179,7 +179,7 @@ format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [hostname]
 ssh_only = true
-style = "fg:#CC241D bg:#458588"
+style = "fg:$color_red bg:color_orange"
 format = '[on $hostname ]($style)'
 
 [line_break]
