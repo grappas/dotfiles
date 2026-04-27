@@ -28,6 +28,8 @@ $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
+right_format = "$status$cmd_duration"
+
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
@@ -182,6 +184,14 @@ disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+
+[status]
+disabled = false
+format = "[ $status](fg:color_red) "
+
+[cmd_duration]
+min_time = 2000
+format = "[ $duration](fg:color_yellow)"
 
 [line_break]
 disabled = false
