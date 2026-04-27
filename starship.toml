@@ -75,12 +75,12 @@ NixOS = ""
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_red fg:color_fg0"
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
 
 [hostname]
-ssh_only = true
+ssh_only = false
 style = "fg:color_fg0 bg:color_orange"
-format = '[on $hostname ]($style)'
+format = '[@$hostname ]($style)'
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
