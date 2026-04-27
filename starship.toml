@@ -46,7 +46,7 @@ disabled = false
 # represents the current operating system
 [os]
 style = "bg:#458588"
-disabled = true
+disabled = false
 
 [hostname]
 ssh_only = true
