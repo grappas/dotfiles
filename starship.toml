@@ -44,8 +44,7 @@ color_yellow = '#d79921'
 
 [os]
 disabled = false
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_red fg:color_fg0"
+style = "bg:color_orange fg:color_fg0"
 
 [os.symbols]
 Windows = "󰍲"
@@ -74,14 +73,14 @@ NixOS = ""
 
 [username]
 show_always = true
+style = "bg:color_orange fg:color_fg0"
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_red fg:color_fg0"
 format = '[ $user ]($style)'
 
 [hostname]
 ssh_only = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_red fg:color_fg0"
+style = "bg:color_orange fg:color_fg0"
 format = '[on $hostname ]($style)'
 
 [directory]
