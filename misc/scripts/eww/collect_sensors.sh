@@ -34,7 +34,13 @@ ZENPOWER=$(cat /tmp/eww/sensors.json | grep zenpower-pci | sed 's/^.*\"z/z/g' | 
 sudo zenmonitor-cli -o >/tmp/eww/zenmonitor.out.temp
 cat /tmp/eww/zenmonitor.out.temp >/tmp/eww/zenmonitor.out
 cat /tmp/eww/sensors.json | jq --arg AMDGPU "$AMDGPU" '.[$ARGS.named.AMDGPU] | .PPT | .power1_average' | sed 's/\..*$//g' >/tmp/eww/sensors.amdgpu.power
-cat /tmp/eww/zenmonitor.out | grep "Package Power" | sed 's/Package\ Power\t//g' | sed 's/\..*$//g' >/tmp/eww/sensors.zenpower.power
+PACKAGE_POWER=$(cat /tmp/eww/zenmonitor.out | grep "Package Power" | sed 's/Package\ Power\t//g' | sed 's/\..*$//g')
+if [ -z "$PACKAGE_POWER" ]; then
+    CPU_CORE=$(cat /tmp/eww/zenmonitor.out | grep "CPU Core Power (SVI2)" | sed 's/CPU\ Core\ Power\ (SVI2)\t//g' | sed 's/\..*$//g')
+    SOC=$(cat /tmp/eww/zenmonitor.out | grep "SOC Power (SVI2)" | sed 's/SOC\ Power\ (SVI2)\t//g' | sed 's/\..*$//g')
+    PACKAGE_POWER=$(( ${CPU_CORE:-0} + ${SOC:-0} ))
+fi
+echo "$PACKAGE_POWER" >/tmp/eww/sensors.zenpower.power
 cat /tmp/eww/zenmonitor.out | grep "CPU Core Voltage" | sed 's/CPU\ Core\ Voltage\ (SVI2)\t//g' >/tmp/eww/sensors.zenpower.voltage
 cat /tmp/eww/sensors.json | jq --arg ZENPOWER "$ZENPOWER" '.[$ARGS.named.ZENPOWER] | .Tdie | .temp1_input' | sed 's/\..*$//g' >/tmp/eww/sensors.zenpower.temp
 cat /tmp/eww/sensors.json | jq --arg AMDGPU "$AMDGPU" '.[$ARGS.named.AMDGPU] | .edge | .temp1_input' >/tmp/eww/sensors.amdgpu.temp
