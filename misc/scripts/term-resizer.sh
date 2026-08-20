@@ -51,13 +51,13 @@ while true; do
 				ADDRESS_CACHE=$(echo "$address" | sed 's/\"//g')
 
 				if [ $NO_STEPS -gt 0 ]; then
-					hyprctl keyword bind CONTROL,code:21,pass,address:"$ADDRESS_CACHE"
+					hyprctl eval "hl.bind(\"CTRL + code:21\", hl.dsp.pass({window = \"address:$ADDRESS_CACHE\"}))"
 					ydotool key 29:1"$(seq 1 $NO_STEPS | while read -r _; do printf " 13:1 13:0"; done)" 29:0
-					hyprctl keyword unbind CONTROL,code:21
+					hyprctl eval 'hl.unbind("CTRL + code:21")'
 				elif [ $NO_STEPS -lt 0 ]; then
-					hyprctl keyword bind CONTROL,code:20,pass,address:"$ADDRESS_CACHE"
+					hyprctl eval "hl.bind(\"CTRL + code:20\", hl.dsp.pass({window = \"address:$ADDRESS_CACHE\"}))"
 					ydotool key 29:1"$(seq 1 $(($NO_STEPS * -1)) | while read -r _; do printf " 12:1 12:0"; done)" 29:0
-					hyprctl keyword unbind CONTROL,code:20
+					hyprctl eval 'hl.unbind("CTRL + code:20")'
 				fi
 
 				NEW_CACHE=$(cat /tmp/term-resizer-cache.$$ | sed 's/'"$address"'.*$/'$address'\ '$WIDTH'\ '$HEIGHT'/')

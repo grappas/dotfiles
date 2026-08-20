@@ -19,11 +19,11 @@ while IFS='  ' read -r window_name app argument workspace; do
         sleep 1
     done
     sleep 2
-    hyprctl dispatch focuswindow "$window_name"
+    hyprctl dispatch "hl.dsp.focus({window = \"class:$window_name\"})"
     sleep 0.5
-    hyprctl dispatch movetoworkspacesilent "$workspace"
+    hyprctl dispatch "hl.dsp.window.move({workspace = \"$workspace\", follow = false})"
     sleep 0.5
-    hyprctl dispatch workspace 1
+    hyprctl dispatch 'hl.dsp.focus({workspace = 1})'
 done <~/.config/hypr/autostart_list.txt
 
 sleep 1

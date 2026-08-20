@@ -49,9 +49,9 @@ while $notyet; do
 	while read -r ff_workspace; do
 		while read -r workspace; do
 			if [ "$ff_workspace" == "$workspace" ]; then
-				hyprctl dispatcher workspace "$workspace"
-				hyprctl dispatcher workspace +2
-				hyprctl dispatcher focusmonitor +1
+				hyprctl dispatch "hl.dsp.focus({workspace = \"$workspace\"})"
+				hyprctl dispatch 'hl.dsp.focus({workspace = "+2"})'
+				hyprctl dispatch 'hl.dsp.focus({monitor = "+1"})'
 				again=true
 			fi
 		done <<<"$workspaces_per_monitor"
@@ -63,4 +63,4 @@ while $notyet; do
 done
 sleep 2
 
-hyprctl dispatcher dpms off
+hyprctl dispatch 'hl.dsp.dpms({action = "off"})'

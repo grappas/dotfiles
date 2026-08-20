@@ -9,7 +9,7 @@ prepend_keymap = [{ on = "<C-y>", run = ["plugin system-clipboard"] }]
 clipboard = "wl-clipboard"
 
 [opener]
-open = [{ run = 'xdg-open "$@"', desc = "Open" }]
+open = [{ run = '/usr/bin/env xdg-open "$@"', desc = "Open" }]
 
 [plugin]
 prepend_previewers = [

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# hyprctl dispatcher exec ydotoold
+# hyprctl dispatch 'hl.dsp.exec_cmd("ydotoold")'
 while true; do
     while [ ! -f /tmp/wakeup ]; do
         sleep 1
